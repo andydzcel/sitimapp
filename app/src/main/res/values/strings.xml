@@ -4,4 +4,13 @@
     <string-array name="lista_prueba">
 
     </string-array>
+    <string name="home_view_btn_cultura">Cultura</string>
+    <string name="home_view_btn_restaurantes">Restaurantes</string>
+    <string name="home_view_btn_compras">Compras</string>
+    <string name="home_view_btn_diversion">Diversion</string>
+    <string name="home_view_btn_hospedaje">Hospedaje</string>
+    <string name="home_view_btn_favoritos">Favoritos</string>
+    <string name="home_view_btn_otroslesgusto">A otros usuarios les gusto</string>
+    <string name="home_view_btn_salir">Salir</string>
+    <string name="home_view_btnagregarlugar">Agregar lugar</string>
 </resources>
