@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SitimappColombia">
         <activity
+            android:name=".misLugares"
+            android:exported="false" />
+        <activity
             android:name=".AcercaDe"
             android:exported="false" />
         <activity
