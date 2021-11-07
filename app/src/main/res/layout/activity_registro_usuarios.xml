@@ -10,7 +10,7 @@
         android:id="@+id/imgview_registroU"
         android:layout_width="129dp"
         android:layout_height="230dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="68dp"
         android:layout_marginBottom="29dp"
         app:layout_constraintBottom_toTopOf="@+id/editext_email_login"
         app:layout_constraintEnd_toEndOf="parent"
