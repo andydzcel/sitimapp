@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AcercaDe">
+
+    <TextView
+        android:id="@+id/img_view_acercade_nombres"
+        android:layout_width="241dp"
+        android:layout_height="107dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/montserrat"
+        android:gravity="center_horizontal"
+        android:text="- Victor Hugo Leon Chacon
+                      - Brayan Leonardo Bogota Mora
+                      - Juan Esteban Ortegon Murcia
+                      - Jeniffer Andrea Camargo Barajas
+                      - Johan Sebastian Rincón Castillo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_view_acercade_titulo" />
+
+    <TextView
+        android:id="@+id/img_view_acercade_creditos"
+        android:layout_width="227dp"
+        android:layout_height="83dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/montserrat"
+        android:gravity="center_horizontal"
+        android:text="Para Misión TIC 2022 en acompañamiento de la Universidad Industrial de Bucaramanga."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_view_acercade_nombres" />
+
+    <TextView
+        android:id="@+id/img_view_acercade_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="@font/montserrat"
+        android:gravity="center_horizontal"
+        android:text="Sitimapp Colombia fue desarrollada por: "
+        app:layout_constraintBottom_toTopOf="@+id/img_view_acercade_nombres"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_view_acercade_logo" />
+
+    <ImageView
+        android:id="@+id/img_view_acercade_logo"
+        android:layout_width="113dp"
+        android:layout_height="166dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/img_view_acercade_titulo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/png_sitimapp_logo" />
+
+    <Button
+        android:id="@+id/img_view_acercade_volver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="#023DBF"
+        android:fontFamily="@font/montserrat"
+        android:text="VOLVER"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_view_acercade_creditos"
+        app:layout_constraintVertical_bias="0.32" />
+</android.support.constraint.ConstraintLayout>
