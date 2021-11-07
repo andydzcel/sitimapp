@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SitimappColombia">
         <activity
+            android:name=".InitialScreen"
+            android:exported="false" />
+        <activity
             android:name=".listaFavoritos"
             android:exported="false" />
         <activity
@@ -25,7 +28,7 @@
             android:name=".login"
             android:exported="false" />
         <activity
-            android:name=".InitialScreen"
+            android:name=".activity_home_view"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
