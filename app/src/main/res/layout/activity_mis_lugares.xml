@@ -3,7 +3,157 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".misLugares">
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/id_mis_lugares_titulo"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="22dp"
+        android:background="#FFF400"
+        android:backgroundTint="#FFF400"
+
+        android:fontFamily="@font/montserrat"
+
+        android:gravity="center"
+        android:text="MIS LUGARES"
+
+        android:textIsSelectable="false"
+        android:typeface="serif"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/id_mis_lugares_tx_nombre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/id_mis_lugares_tx_nombre"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:fontFamily="@font/montserrat"
+        android:inputType="textPersonName"
+        android:text="Entra un nombre del Sitio"
+        app:layout_constraintBottom_toTopOf="@+id/id_mis_lugares_tx_descripcion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_mis_lugares_titulo" />
+
+    <EditText
+        android:id="@+id/id_mis_lugares_tx_descripcion"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="47dp"
+        android:ems="10"
+        android:fontFamily="@font/montserrat"
+        android:inputType="textPersonName"
+        android:text="Añade descripción del Sitio"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_mis_lugares_tx_nombre" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="221dp"
+        android:layout_height="167dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@+id/radioGroup"
+        app:layout_constraintHorizontal_bias="0.714"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_mis_lugares_tx_descripcion">
+
+        <Spinner
+            android:id="@+id/id_mis_lugares_long_latitud"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#BA1B06"
+            android:visibility="visible"
+            tools:visibility="visible" />
+
+        <EditText
+            android:id="@+id/id_mis_lugares_tx_longitud"
+            android:layout_width="253dp"
+            android:layout_height="45dp"
+            android:ems="10"
+            android:fontFamily="@font/montserrat"
+            android:inputType="textPersonName"
+            android:text="Digite Longitud" />
+
+        <EditText
+            android:id="@+id/id_mis_lugares_TXT_Longitud"
+            android:layout_width="253dp"
+            android:layout_height="54dp"
+            android:ems="10"
+            android:fontFamily="@font/montserrat"
+            android:inputType="textPersonName"
+            android:text="Digite Latitud" />
+
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="123dp"
+        android:layout_height="134dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="366dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_mis_lugares_tx_descripcion">
+
+        <RadioButton
+            android:id="@+id/id_mis_lugares_R_restaurante"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:text="Restaurante" />
+
+        <RadioButton
+            android:id="@+id/id_mis_lugares_R_compras"
+            android:layout_width="106dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:text="Compras" />
+
+        <RadioButton
+            android:id="@+id/id_mis_lugares_R_hospedaje"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:text="Hospedaje" />
+
+        <RadioButton
+            android:id="@+id/id_mis_lugares_R_cultura"
+            android:layout_width="106dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:text="Cultura" />
+
+    </RadioGroup>
+
+    <ImageButton
+        android:id="@+id/id_mis_lugares_guardar"
+        android:layout_width="77dp"
+        android:layout_height="66dp"
+        android:layout_marginBottom="68dp"
+        android:backgroundTint="#023DBF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_save" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="150dp"
+        android:layout_height="189dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/id_mis_lugares_guardar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/png_sitimapp_logo" />
 
 </android.support.constraint.ConstraintLayout>
