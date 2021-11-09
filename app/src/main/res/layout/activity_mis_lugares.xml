@@ -38,6 +38,7 @@
         android:text="Entra un nombre del Sitio"
         app:layout_constraintBottom_toTopOf="@+id/id_mis_lugares_tx_descripcion"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.288"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/id_mis_lugares_titulo" />
 
@@ -52,6 +53,7 @@
         android:text="Añade descripción del Sitio"
         app:layout_constraintBottom_toTopOf="@+id/radioGroup"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.288"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/id_mis_lugares_tx_nombre" />
 
@@ -96,41 +98,70 @@
 
     <RadioGroup
         android:id="@+id/radioGroup"
-        android:layout_width="123dp"
-        android:layout_height="134dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="366dp"
+        android:layout_width="177dp"
+        android:layout_height="286dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="150dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/id_mis_lugares_tx_descripcion">
 
         <RadioButton
             android:id="@+id/id_mis_lugares_R_restaurante"
-            android:layout_width="wrap_content"
+            android:layout_width="162dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat"
-            android:text="Restaurante" />
+            android:text="RESTAURANTE" />
 
         <RadioButton
             android:id="@+id/id_mis_lugares_R_compras"
-            android:layout_width="106dp"
+            android:layout_width="155dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat"
-            android:text="Compras" />
+            android:text="COMPRAS" />
 
         <RadioButton
             android:id="@+id/id_mis_lugares_R_hospedaje"
-            android:layout_width="110dp"
+            android:layout_width="166dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat"
-            android:text="Hospedaje" />
+            android:text="HOSPEDAJE" />
 
         <RadioButton
             android:id="@+id/id_mis_lugares_R_cultura"
             android:layout_width="106dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat"
-            android:text="Cultura" />
+            android:text="CULTURA" />
+
+        <RadioButton
+            android:id="@+id/id_mis_lugares_R_diversion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:text="DIVERSION " />
+
+        <RadioButton
+            android:id="@+id/id_mis_lugares_R_favoritos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:text="FAVORITOS" />
+
+        <RadioButton
+            android:id="@+id/id_mis_lugares_R_otros_usuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:minHeight="48dp"
+            android:text="A OTROS USUARIOS" />
+
+        <RadioButton
+            android:id="@+id/id_mis_lugares_R_agregar_lugar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:text="AGREGAR LUGAR" />
 
     </RadioGroup>
 
@@ -149,10 +180,10 @@
         android:id="@+id/imageView"
         android:layout_width="150dp"
         android:layout_height="189dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="4dp"
         app:layout_constraintBottom_toTopOf="@+id/id_mis_lugares_guardar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.065"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/png_sitimapp_logo" />
 
