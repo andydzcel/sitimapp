@@ -13,4 +13,5 @@
     <string name="home_view_btn_otroslesgusto">A otros usuarios les gusto</string>
     <string name="home_view_btn_salir">Salir</string>
     <string name="home_view_btnagregarlugar">Agregar lugar</string>
+    <string name="home_view_btn_acercade">Acerca de</string>
 </resources>

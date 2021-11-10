@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="131dp"
-        android:layout_height="170dp"
+        android:layout_width="130dp"
+        android:layout_height="132dp"
         android:layout_marginTop="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,12 +21,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="12dp"
         android:drawableStart="@drawable/ic_cultura"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/home_view_btn_cultura"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
@@ -126,6 +127,20 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_otroslesgusto" />
 
     <Button
+        android:id="@+id/btn_acercade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        android:drawableStart="@drawable/ic_acercade"
+        android:text="@string/home_view_btn_acercade"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_agregarlugar" />
+
+    <Button
         android:id="@+id/btn_salir"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -137,5 +152,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_agregarlugar" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_acercade" />
 </android.support.constraint.ConstraintLayout>
