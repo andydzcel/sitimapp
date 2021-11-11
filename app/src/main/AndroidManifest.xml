@@ -25,10 +25,10 @@
             android:name=".registroUsuarios"
             android:exported="false" />
         <activity
-            android:name=".login"
+            android:name=".activity_home_view"
             android:exported="false" />
         <activity
-            android:name=".activity_home_view"
+            android:name=".login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
