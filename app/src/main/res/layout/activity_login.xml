@@ -19,6 +19,7 @@
         app:layout_constraintVertical_bias="0.43"
         app:srcCompat="@drawable/png_sitimapp_logo" />
 
+
     <Button
         android:id="@+id/btn_login_ingresar"
         android:layout_width="wrap_content"
@@ -27,23 +28,12 @@
         android:background="#FFD400"
         android:fontFamily="@font/montserrat"
         android:text="Ingresar"
-        app:layout_constraintBottom_toTopOf="@+id/btn_login_registrarme"
+        app:layout_constraintBottom_toTopOf="@+id/btn_login_registrarse"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_login_contrasenia" />
 
-    <TextView
-        android:id="@+id/btn_login_registrarme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="136dp"
-        android:text="No tengo cuenta. Quiero registrarme."
-        android:textColor="#023DBF "
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.538"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/btn_login_contrasenia"
@@ -74,5 +64,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgview_login"
         tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/btn_login_registrarse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="76dp"
+        android:backgroundTint="#FFFFFFFF"
+        android:fontFamily="@font/montserrat"
+        android:foregroundTint="#00BF3737"
+        android:shadowColor="#00AA1B1B"
+        android:text="No tengo usuario. Quiero registrarme."
+        android:textColor="#023DBF"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
