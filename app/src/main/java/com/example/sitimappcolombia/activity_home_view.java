@@ -21,5 +21,32 @@ public class activity_home_view extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        Button btn_favoritos = (Button) findViewById(R.id.btn_favoritos);
+        btn_favoritos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(v.getContext(),listaFavoritos.class);
+                startActivity(i);
+            }
+        });
+
+        Button btn_agregarlugar =(Button) findViewById(R.id.btn_agregarlugar);
+        btn_agregarlugar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(v.getContext(),misLugares.class);
+                startActivity(i);
+            }
+        });
+
+        Button btn_salir =(Button) findViewById(R.id.btn_salir);
+        btn_salir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(v.getContext(),login.class);
+                startActivity(i);
+            }
+        });
     }
 }
