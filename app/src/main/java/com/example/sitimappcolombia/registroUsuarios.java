@@ -1,5 +1,6 @@
 package com.example.sitimappcolombia;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -33,9 +34,13 @@ public class registroUsuarios extends AppCompatActivity {
                 }
                 else
                 {
-                    new Mensajes(view.getContext()).confirmacion("Registro completado", "Ya estás listo para usar Sitimapp Colombia.");
-                    Intent i = new Intent(view.getContext(), login.class);
-                    startActivity(i);
+                    new Mensajes(view.getContext()).confirmacion("Registro completado", "Ya estás listo para usar Sitimapp Colombia.", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            Intent in = new Intent(view.getContext(), login.class);
+                            startActivity(in);
+                        }
+                    });
                 }
             }
         });
