@@ -4,24 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    android: id="@+id/layout_home"
+    tools:context=".home_view">
 
     <TextView
-        android:id="@+id/id_mis_lugares_titulo"
-        android:layout_width="match_parent"
+        android:id="@+id/id_txt_mislugares_titulo"
+        android:layout_width="408dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="22dp"
+        android:layout_marginBottom="187dp"
+        android:autoText="false"
+
         android:background="#FFF400"
+
         android:backgroundTint="#FFF400"
 
         android:fontFamily="@font/montserrat"
-
         android:gravity="center"
         android:text="MIS LUGARES"
-
         android:textIsSelectable="false"
+        android:textSize="34sp"
         android:typeface="serif"
-        app:autoSizeTextType="uniform"
-        app:layout_constraintBottom_toTopOf="@+id/id_mis_lugares_tx_nombre"
+        app:autoSizeTextType="none"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,44 +33,60 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/id_mis_lugares_tx_nombre"
+        android:id="@+id/id_txt_mislugares_nombre"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:fontFamily="@font/montserrat"
+        android:hint="Ingresa el nombre de tu lugar"
         android:inputType="textPersonName"
-        android:text="Entra un nombre del Sitio"
-        app:layout_constraintBottom_toTopOf="@+id/id_mis_lugares_tx_descripcion"
+        app:layout_constraintBottom_toTopOf="@+id/id_txt_mislugares_descripcion"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.288"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/id_mis_lugares_titulo" />
+        app:layout_constraintTop_toBottomOf="@+id/id_txt_mislugares_titulo" />
 
     <EditText
-        android:id="@+id/id_mis_lugares_tx_descripcion"
+        android:id="@+id/id_txt_mislugares_descripcion"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="47dp"
         android:ems="10"
         android:fontFamily="@font/montserrat"
+        android:hint="Añade la descripción de tu lugar"
         android:inputType="textPersonName"
-        android:text="Añade descripción del Sitio"
-        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.288"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/id_mis_lugares_tx_nombre" />
+        app:layout_constraintTop_toBottomOf="@+id/id_txt_mislugares_nombre" />
+
+    <RatingBar
+        android:id="@+id/id_rb_mislugares_calificacion"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:max="5"
+        android:numStars="5"
+        android:progressTint="#023DBF"
+        android:rating="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.0" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="221dp"
-        android:layout_height="167dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="306dp"
+        android:gravity="bottom"
         android:orientation="vertical"
-        app:layout_constraintEnd_toStartOf="@+id/radioGroup"
-        app:layout_constraintHorizontal_bias="0.714"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/id_mis_lugares_tx_descripcion">
+        app:layout_constraintTop_toBottomOf="@+id/id_txt_mislugares_titulo">
 
         <Spinner
             android:id="@+id/id_mis_lugares_long_latitud"
@@ -74,117 +94,67 @@
             android:layout_height="wrap_content"
             android:backgroundTint="#BA1B06"
             android:visibility="visible"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
             tools:visibility="visible" />
 
         <EditText
-            android:id="@+id/id_mis_lugares_tx_longitud"
-            android:layout_width="253dp"
+            android:id="@+id/id_txt_mislugares__longitud"
+            android:layout_width="match_parent"
             android:layout_height="45dp"
             android:ems="10"
             android:fontFamily="@font/montserrat"
+            android:hint="Digite Longitud"
             android:inputType="textPersonName"
-            android:text="Digite Longitud" />
+            tools:ignore="TouchTargetSizeCheck" />
 
         <EditText
-            android:id="@+id/id_mis_lugares_TXT_Longitud"
-            android:layout_width="253dp"
+            android:id="@+id/id_txt_mislugares_Longitud"
+            android:layout_width="match_parent"
             android:layout_height="54dp"
             android:ems="10"
             android:fontFamily="@font/montserrat"
-            android:inputType="textPersonName"
-            android:text="Digite Latitud" />
+            android:hint="Digite Latitud"
+            android:inputType="textPersonName" />
 
     </LinearLayout>
 
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="177dp"
-        android:layout_height="286dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="150dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/id_mis_lugares_tx_descripcion">
-
-        <RadioButton
-            android:id="@+id/id_mis_lugares_R_restaurante"
-            android:layout_width="162dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat"
-            android:text="RESTAURANTE" />
-
-        <RadioButton
-            android:id="@+id/id_mis_lugares_R_compras"
-            android:layout_width="155dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat"
-            android:text="COMPRAS" />
-
-        <RadioButton
-            android:id="@+id/id_mis_lugares_R_hospedaje"
-            android:layout_width="166dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat"
-            android:text="HOSPEDAJE" />
-
-        <RadioButton
-            android:id="@+id/id_mis_lugares_R_cultura"
-            android:layout_width="106dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat"
-            android:text="CULTURA" />
-
-        <RadioButton
-            android:id="@+id/id_mis_lugares_R_diversion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat"
-            android:text="DIVERSION " />
-
-        <RadioButton
-            android:id="@+id/id_mis_lugares_R_favoritos"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat"
-            android:text="FAVORITOS" />
-
-        <RadioButton
-            android:id="@+id/id_mis_lugares_R_otros_usuario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat"
-            android:minHeight="48dp"
-            android:text="A OTROS USUARIOS" />
-
-        <RadioButton
-            android:id="@+id/id_mis_lugares_R_agregar_lugar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat"
-            android:text="AGREGAR LUGAR" />
-
-    </RadioGroup>
-
     <ImageButton
-        android:id="@+id/id_mis_lugares_guardar"
-        android:layout_width="77dp"
-        android:layout_height="66dp"
-        android:layout_marginBottom="68dp"
+        android:id="@+id/id_btn_mislugares_guardar"
+        android:layout_width="120dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="76dp"
         android:backgroundTint="#023DBF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.234"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_rb_mislugares_calificacion"
+        app:layout_constraintVertical_bias="0.158"
         app:srcCompat="@android:drawable/ic_menu_save" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="150dp"
-        android:layout_height="189dp"
-        android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toTopOf="@+id/id_mis_lugares_guardar"
+        android:id="@+id/id_img_mislugares_imagen"
+        android:layout_width="125dp"
+        android:layout_height="163dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintHorizontal_bias="0.785"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_rb_mislugares_calificacion"
+        app:layout_constraintVertical_bias="0.09"
         app:srcCompat="@drawable/png_sitimapp_logo" />
+
+    <Spinner
+        android:id="@+id/id_Sp_mis_lugares_seleccion"
+        android:layout_width="302dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="10dp"
+        android:entries="@array/mislugares"
+        android:textAlignment="textStart"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_txt_mislugares_descripcion" />
 
 </android.support.constraint.ConstraintLayout>
