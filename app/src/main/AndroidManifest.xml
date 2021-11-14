@@ -19,13 +19,13 @@
             android:name=".misLugares"
             android:exported="false" />
         <activity
-            android:name=".AcercaDe"
-            android:exported="false" />
-        <activity
             android:name=".registroUsuarios"
             android:exported="false" />
         <activity
             android:name=".activity_home_view"
+            android:exported="false" />
+        <activity
+            android:name=".AcercaDe"
             android:exported="false" />
         <activity
             android:name=".login"

@@ -18,5 +18,13 @@
     <string name="btn_login_contrasenia">Contrasenia</string>
     <string name="btn_login_ingresar">Ingresar</string>
     <string name="btn_login_registrarme">Registrarme</string>
+    <string-array name="mislugares">
+        <item>Restaurantes</item>
+        <item>Comida</item>
+        <item>Hospedaje</item>
+        <item>Cultura</item>
+        <item>Diversion</item>
+        <item>Compras</item>
+    </string-array>
 
 </resources>
