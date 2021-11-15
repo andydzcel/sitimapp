@@ -9,6 +9,10 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.sitimappcolombia.clases.Mensajes;
+import com.example.sitimappcolombia.dao.UsuarioDAO;
+import com.example.sitimappcolombia.modelos.Usuario;
+
+import java.util.ArrayList;
 
 public class registroUsuarios extends AppCompatActivity {
 
@@ -17,23 +21,24 @@ public class registroUsuarios extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_usuarios);
 
-        Button btn_registrarse = (Button) findViewById(R.id.btn_registrousuarios_registrarse);
-        EditText txtNombreCompleto = (EditText) findViewById(R.id.btn_registrousuarios_nombreapellido);
-        EditText txtEmail = (EditText) findViewById(R.id.btn_registrousuarios_email);
-        EditText txtClave = (EditText) findViewById(R.id.btn_registrousuarios_contrasenia);
+        EditText txtNombres =(EditText) findViewById(R.id.usuariosinsertar_txtNombres);
+        EditText txtEmail =(EditText) findViewById(R.id.usuariosinsertar_txtEmail);
+        EditText txtClave =(EditText) findViewById(R.id.usuariosinsertar_txtClave);
+        Button btn_registrarse = (Button) findViewById(R.id.usuariosinsertar_btnRegistrarse);
 
         btn_registrarse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String nombre = txtNombreCompleto.getText().toString();
+                String nombres = txtNombres.getText().toString();
                 String email = txtEmail.getText().toString();
                 String clave = txtClave.getText().toString();
 
-                if(email.isEmpty() || clave.isEmpty() || nombre.isEmpty()) {
+                if(email.isEmpty() || clave.isEmpty() || nombres.isEmpty()) {
                    new Mensajes(view.getContext()).alerta("Advertencia", "Digite los campos vacíos.");
                 }
                 else
                 {
+                    long id =insertar(txtNombres,txtEmail,txtClave);
                     new Mensajes(view.getContext()).confirmacion("Registro completado", "Ya estás listo para usar Sitimapp Colombia.", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
@@ -44,5 +49,24 @@ public class registroUsuarios extends AppCompatActivity {
                 }
             }
         });
+
     }
+
+    private long insertar(EditText nombres,EditText email,EditText clave)
+    {
+        long id =0;
+
+        Usuario us = new Usuario();
+        us.setNombres(nombres.getText().toString());
+        us.setEmail(email.getText().toString());
+        us.setClave(clave.getText().toString());
+
+        UsuarioDAO usdao = new UsuarioDAO(this);
+        id = usdao.insertar(us);
+
+        ArrayList<Usuario> usuarios = usdao.listar();
+
+        return id;
+    }
+
 }
