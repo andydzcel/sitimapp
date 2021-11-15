@@ -4,6 +4,9 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.icu.util.LocaleData;
+import android.support.design.widget.Snackbar;
+import android.view.View;
+import android.widget.Toast;
 
 public class Mensajes {
     private Context contexto;
@@ -33,5 +36,15 @@ public class Mensajes {
         });
         msj.create();
         msj.show();
+    }
+
+    public void toast(String cuerpo)
+    {
+        Toast.makeText(this.contexto, cuerpo, Toast.LENGTH_LONG).show();
+    }
+
+    public void snackbar(View vista, String cuerpo)
+    {
+       Snackbar.make(vista,cuerpo,Snackbar.LENGTH_LONG).show();
     }
 }

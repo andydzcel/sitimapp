@@ -8,87 +8,31 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="130dp"
-        android:layout_height="132dp"
-        android:layout_marginTop="18dp"
+        android:layout_width="129dp"
+        android:layout_height="230dp"
+        android:layout_marginTop="68dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/png_sitimapp_logo" />
 
     <Button
-        android:id="@+id/btn_cultura"
+        android:id="@+id/btn_home_view_sitios"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="12dp"
-        android:drawableStart="@drawable/ic_cultura"
+        android:drawableStart="@drawable/ic_sitios"
         android:gravity="center_horizontal|center_vertical"
-        android:text="@string/home_view_btn_cultura"
+        android:text="@string/home_view_btn_sitios"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <Button
-        android:id="@+id/btn_restaurantes"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="12dp"
-        android:drawableStart="@drawable/ic_restaurante"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="@string/home_view_btn_restaurantes"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_cultura" />
-
-    <Button
-        android:id="@+id/btn_compras"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="12dp"
-        android:drawableStart="@drawable/ic_compras"
-        android:gravity="center|center_horizontal"
-        android:text="@string/home_view_btn_compras"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_restaurantes" />
-
-    <Button
-        android:id="@+id/btn_diversion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="12dp"
-        android:drawableStart="@drawable/ic_diversion"
-        android:text="@string/home_view_btn_diversion"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_compras" />
-
-    <Button
-        android:id="@+id/btn_hospedaje"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="12dp"
-        android:drawableStart="@drawable/ic_hospedaje"
-        android:text="@string/home_view_btn_hospedaje"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_diversion" />
-
-    <Button
-        android:id="@+id/btn_favoritos"
+        android:id="@+id/btn_home_view_favoritos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -98,23 +42,10 @@
         android:text="@string/home_view_btn_favoritos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_hospedaje" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_home_view_sitios" />
 
     <Button
-        android:id="@+id/btn_otroslesgusto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="12dp"
-        android:drawableStart="@drawable/ic_otrosusuarios"
-        android:text="@string/home_view_btn_otroslesgusto"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_favoritos" />
-
-    <Button
-        android:id="@+id/btn_agregarlugar"
+        android:id="@+id/btn_home_view_agregarlugar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -123,11 +54,12 @@
         android:drawableStart="@drawable/ic_agregarlugar"
         android:text="@string/home_view_btnagregarlugar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_otroslesgusto" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_home_view_favoritos" />
 
     <Button
-        android:id="@+id/btn_acercade"
+        android:id="@+id/btn_home_view_acercade"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -138,10 +70,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_agregarlugar" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_home_view_agregarlugar" />
 
     <Button
-        android:id="@+id/btn_salir"
+        android:id="@+id/btn_home_view_salir"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -152,5 +84,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_acercade" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_home_view_acercade" />
 </android.support.constraint.ConstraintLayout>

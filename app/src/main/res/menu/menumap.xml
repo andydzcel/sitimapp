@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/mni_menumap_cultura"
+        android:icon="@drawable/ic_cultura"
+        android:title="@string/menumap_mnicultura" />
+    <item
+        android:id="@+id/mni_menumap_restaurante"
+        android:icon="@drawable/ic_restaurante"
+        android:title="@string/menumap_mnirestaurante" />
+    <item
+        android:id="@+id/mni_menumap_diversion"
+        android:icon="@drawable/ic_diversion"
+        android:title="@string/menumap_mnidiversion" />
+    <item
+        android:id="@+id/mni_menumap_compras"
+        android:icon="@drawable/ic_compras"
+        android:title="@string/menumap_mnicompra" />
+    <item
+        android:id="@+id/mni_menumap_hospedaje"
+        android:icon="@drawable/ic_hospedaje"
+        android:title="@string/menumap_mnihospedaje" />
+    <item
+        android:id="@+id/mni_menumap_favoritos"
+        android:icon="@drawable/ic_favoritos"
+        android:title="@string/menumap_mnifavoritos" />
+    <item
+        android:id="@+id/mni_menumap_aotroslesgusto"
+        android:icon="@drawable/ic_otrosusuarios"
+        android:title="@string/menumap_mniaotroslesgusto" />
+    <item
+        android:id="@+id/mni_menumap_home"
+        android:icon="@android:drawable/ic_menu_revert"
+        android:title="@string/menumap_mnihome" />
+</menu>
