@@ -4,19 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/MINTIC/CICLO4/SiTm/app/src/main/res/layout/activity_home_view.xml" value="0.24456521739130435" />
-        <entry key="..\:/Users/Johan/Documents/sitimapp/app/src/main/res/drawable-anydpi/ic_hospedaje.xml" value="0.5703125" />
-        <entry key="..\:/Users/Johan/Documents/sitimapp/app/src/main/res/drawable-anydpi/ic_vermas_listafavoritos.xml" value="0.5703125" />
-        <entry key="..\:/Users/Johan/Documents/sitimapp/app/src/main/res/drawable/ic_ubicacion.xml" value="0.5703125" />
         <entry key="..\:/Users/Johan/Documents/sitimapp/app/src/main/res/layout/activity_acerca_de.xml" value="0.5541666666666667" />
-        <entry key="..\:/Users/Johan/Documents/sitimapp/app/src/main/res/layout/activity_home_view.xml" value="0.5541666666666667" />
         <entry key="..\:/Users/Johan/Documents/sitimapp/app/src/main/res/layout/activity_initial_screen.xml" value="0.5541666666666667" />
-        <entry key="..\:/Users/Johan/Documents/sitimapp/app/src/main/res/layout/activity_lista_favoritos.xml" value="0.5" />
+        <entry key="..\:/Users/Johan/Documents/sitimapp/app/src/main/res/layout/activity_lista_favoritos.xml" value="0.5541666666666667" />
         <entry key="..\:/Users/Johan/Documents/sitimapp/app/src/main/res/layout/activity_login.xml" value="0.5541666666666667" />
         <entry key="..\:/Users/Johan/Documents/sitimapp/app/src/main/res/layout/activity_mis_lugares.xml" value="0.5541666666666667" />
         <entry key="..\:/Users/Johan/Documents/sitimapp/app/src/main/res/layout/activity_registro_usuarios.xml" value="0.5541666666666667" />
-        <entry key="..\:/Users/Johan/Documents/sitimapp/app/src/main/res/layout/items_listafavoritos.xml" value="0.5" />
-        <entry key="..\:/Users/Johan/Documents/sitimapp/app/src/main/res/menu/activity_menu_listafavoritos.xml" value="0.5541666666666667" />
-        <entry key="..\:/Users/Johan/Documents/sitimapp/app/src/main/res/menu/menu_listafavoritos.xml" value="0.5541666666666667" />
         <entry key="..\:/Users/Maicol/Documents/sitimapp/app/src/main/res/layout/activity_home_view.xml" value="0.264" />
         <entry key="..\:/Users/Maicol/Documents/sitimapp/app/src/main/res/layout/activity_mis_lugares.xml" value="0.1793478260869565" />
         <entry key="..\:/Users/juano/Desktop/PorFin/app/src/main/res/layout/activity_mis_lugares.xml" value="0.2753623188405797" />
@@ -27,6 +20,8 @@
         <entry key="..\:/Users/juano/Desktop/UIS_MisionTIC/Clon/app/src/main/res/layout/activity_login.xml" value="0.36302083333333335" />
         <entry key="..\:/Users/juano/Desktop/UIS_MisionTIC/Clon/app/src/main/res/layout/activity_mis_lugares.xml" value="0.264" />
         <entry key="..\:/Users/juano/Desktop/UIS_MisionTIC/Clon/app/src/main/res/layout/activity_registro_usuarios.xml" value="0.36302083333333335" />
+        <entry key="..\:/Users/juano/Desktop/UIS_MisionTIC/Clon/app/src/main/res/layout/activity_usuario_insertar.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/juano/Desktop/UIS_MisionTIC/Clon/app/src/main/res/layout/items_listafavoritos.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>
@@ -35,12 +30,5 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
-  </component>
-  <component name="VisualizationToolProject">
-    <option name="state">
-      <ProjectState>
-        <option name="scale" value="0.5" />
-      </ProjectState>
-    </option>
   </component>
 </project>
