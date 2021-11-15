@@ -59,7 +59,7 @@ public class activity_home_view extends AppCompatActivity {
         btn_sitios.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new Mensajes(v.getContext()).toast("Has seleccionado 'Sitios'");
+                new Mensajes(v.getContext()).toast("Has seleccionado 'Mi Mapp'");
                 Intent i= new Intent(v.getContext(),activity_map.class);
                 startActivity(i);
             }

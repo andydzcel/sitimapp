@@ -28,7 +28,7 @@ public class login extends AppCompatActivity {
 
                 String email = txtEmail.getText().toString();
                 String clave = txtClave.getText().toString();
-
+                camposVacios(email,clave);
                 if(email.isEmpty() || clave.isEmpty()) {
                     new Mensajes(view.getContext()).alerta("Advertencia", "Digite los campos vacíos.");
                 }
@@ -53,7 +53,13 @@ public class login extends AppCompatActivity {
 
     }
 
-
-
+    public static boolean camposVacios(String email, String clave)
+    {
+        boolean vacios = false;
+        if(email.isEmpty()|| clave.isEmpty()) {
+            vacios = true;
+        }
+        return vacios;
+    }
 
 }

@@ -23,15 +23,7 @@
         android:icon="@drawable/ic_hospedaje"
         android:title="@string/menumap_mnihospedaje" />
     <item
-        android:id="@+id/mni_menumap_favoritos"
-        android:icon="@drawable/ic_favoritos"
-        android:title="@string/menumap_mnifavoritos" />
-    <item
         android:id="@+id/mni_menumap_aotroslesgusto"
         android:icon="@drawable/ic_otrosusuarios"
         android:title="@string/menumap_mniaotroslesgusto" />
-    <item
-        android:id="@+id/mni_menumap_home"
-        android:icon="@android:drawable/ic_menu_revert"
-        android:title="@string/menumap_mnihome" />
 </menu>

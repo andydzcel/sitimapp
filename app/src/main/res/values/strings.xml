@@ -4,7 +4,7 @@
     <string-array name="lista_prueba">
 
     </string-array>
-    <string name="home_view_btn_sitios">Sitios</string>
+    <string name="home_view_btn_sitios">Mi Mapp</string>
     <string name="home_view_btn_favoritos">Favoritos</string>
     <string name="home_view_btn_otroslesgusto">A otros usuarios les gusto</string>
     <string name="home_view_btn_salir">Salir</string>
@@ -19,8 +19,6 @@
     <string name="menumap_mnidiversion">Diversion</string>
     <string name="menumap_mniaotroslesgusto">A otros les gusto</string>
     <string name="menumap_mnihospedaje">Hospedaje</string>
-    <string name="menumap_mnifavoritos">Favoritos</string>
-    <string name="menumap_mnihome">Home</string>
     <string name="menumap_mnicompra">Compras</string>
 
 </resources>
