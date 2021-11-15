@@ -10,8 +10,8 @@
     <TextView
         android:id="@+id/id_txt_mislugares_titulo"
         android:layout_width="408dp"
-        android:layout_height="96dp"
-        android:layout_marginBottom="22dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="475dp"
         android:autoText="false"
         android:background="#FFF400"
 
@@ -25,7 +25,7 @@
         android:textSize="34sp"
         android:typeface="serif"
         app:autoSizeTextType="none"
-        app:layout_constraintBottom_toTopOf="@+id/id_txt_mislugares_nombre"
+        app:layout_constraintBottom_toTopOf="@+id/id_btn_mislugares_guardar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,7 +42,7 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/id_txt_mislugares_descripcion"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.288"
+        app:layout_constraintHorizontal_bias="0.594"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/id_txt_mislugares_titulo" />
 
@@ -50,12 +50,13 @@
         android:id="@+id/id_txt_mislugares_descripcion"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:ems="10"
         android:fontFamily="@font/montserrat"
         android:hint="Añade descripción del Sitio"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.288"
+        app:layout_constraintHorizontal_bias="0.594"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/id_txt_mislugares_nombre" />
 
@@ -63,44 +64,37 @@
         android:id="@+id/id_rb_mislugares_calificacion"
         android:layout_width="240dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:max="5"
         android:numStars="5"
         android:progressTint="#023DBF"
         android:rating="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/id_txt_mislugares_descripcion" />
+        app:layout_constraintTop_toBottomOf="@+id/id_Sp_mis_lugares_seleccion" />
 
     <Button
-        android:id="@+id/id_Btn_mislugeres_salvar"
+        android:id="@+id/id_btn_mislugares_guardar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="20dp"
-        android:text="Salvar"
+        android:layout_marginStart="92dp"
+        android:layout_marginBottom="112dp"
+        android:text="Guardar"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/id_txt_mislugares_titulo" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="221dp"
         android:layout_height="120dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="20dp"
         android:gravity="bottom"
         android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/id_txt_mislugares_descripcion">
-
-        <Spinner
-            android:id="@+id/id_mis_lugares_long_latitud"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
-            android:backgroundTint="#BA1B06"
-            android:visibility="visible"
-            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
-            tools:visibility="visible" />
 
         <EditText
             android:id="@+id/id_txt_mislugares__longitud"
@@ -123,37 +117,29 @@
 
     </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/id_btn_mislugares_guardar"
-        android:layout_width="75dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="310dp"
-        android:layout_marginTop="36dp"
-        android:backgroundTint="#023DBF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.884"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/id_rb_mislugares_calificacion"
-        app:srcCompat="@android:drawable/ic_menu_revert" />
-
     <ImageView
         android:id="@+id/id_img_mislugares_imagen"
         android:layout_width="150dp"
         android:layout_height="189dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginEnd="56dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.938"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toEndOf="@+id/id_btn_mislugares_guardar"
+        app:layout_constraintTop_toBottomOf="@+id/id_rb_mislugares_calificacion"
+        app:layout_constraintVertical_bias="0.333"
         app:srcCompat="@drawable/png_sitimapp_logo" />
 
     <Spinner
         android:id="@+id/id_Sp_mis_lugares_seleccion"
         android:layout_width="300dp"
         android:layout_height="40dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="24dp"
         android:entries="@array/mislugares"
-        app:layout_constraintTop_toBottomOf="@+id/id_rb_mislugares_calificacion"
-        tools:layout_editor_absoluteX="1dp" />
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
 </android.support.constraint.ConstraintLayout>

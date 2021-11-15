@@ -16,7 +16,7 @@
         <item>Comida</item>
         <item>Hospedaje</item>
         <item>Cultura</item>
-        <item>Diversion</item>
+        <item>Diversión</item>
         <item>Compras</item>
     </string-array>
     <string name="txt_listaFavoritos_encabezado">Mis favoritos</string>
@@ -32,7 +32,7 @@
     <string name="usuariosinsertar_msjexito_cuerpo">Se ha agregado el registro correspondiente</string>
     <string name="menumap_mnicultura">Cultura</string>
     <string name="menumap_mnirestaurante">Restaurante</string>
-    <string name="menumap_mnidiversion">Diversion</string>
+    <string name="menumap_mnidiversion">Diversión</string>
     <string name="menumap_mniaotroslesgusto">A otros les gusto</string>
     <string name="menumap_mnihospedaje">Hospedaje</string>
     <string name="menumap_mnicompra">Compras</string>
