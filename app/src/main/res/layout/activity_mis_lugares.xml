@@ -10,22 +10,22 @@
     <TextView
         android:id="@+id/id_txt_mislugares_titulo"
         android:layout_width="408dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="187dp"
+        android:layout_height="96dp"
+        android:layout_marginBottom="22dp"
         android:autoText="false"
-
         android:background="#FFF400"
 
         android:backgroundTint="#FFF400"
 
         android:fontFamily="@font/montserrat"
+
         android:gravity="center"
         android:text="MIS LUGARES"
         android:textIsSelectable="false"
         android:textSize="34sp"
         android:typeface="serif"
         app:autoSizeTextType="none"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintBottom_toTopOf="@+id/id_txt_mislugares_nombre"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,11 +38,11 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:fontFamily="@font/montserrat"
-        android:hint="Ingresa el nombre de tu lugar"
+        android:hint="Entra un nombre del Sitio"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/id_txt_mislugares_descripcion"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.288"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/id_txt_mislugares_titulo" />
 
@@ -52,11 +52,10 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:fontFamily="@font/montserrat"
-        android:hint="Añade la descripción de tu lugar"
+        android:hint="Añade descripción del Sitio"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.288"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/id_txt_mislugares_nombre" />
 
@@ -64,34 +63,40 @@
         android:id="@+id/id_rb_mislugares_calificacion"
         android:layout_width="240dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
         android:layout_marginTop="20dp"
         android:max="5"
         android:numStars="5"
         android:progressTint="#023DBF"
         android:rating="3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/id_txt_mislugares_descripcion" />
+
+    <Button
+        android:id="@+id/id_Btn_mislugeres_salvar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:text="Salvar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="221dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="306dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="150dp"
         android:gravity="bottom"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/id_txt_mislugares_titulo">
+        app:layout_constraintTop_toBottomOf="@+id/id_txt_mislugares_descripcion">
 
         <Spinner
             android:id="@+id/id_mis_lugares_long_latitud"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
             android:backgroundTint="#BA1B06"
             android:visibility="visible"
             tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck"
@@ -108,7 +113,7 @@
             tools:ignore="TouchTargetSizeCheck" />
 
         <EditText
-            android:id="@+id/id_txt_mislugares_Longitud"
+            android:id="@+id/id_txt_mislugares_Latitud"
             android:layout_width="match_parent"
             android:layout_height="54dp"
             android:ems="10"
@@ -120,41 +125,35 @@
 
     <ImageButton
         android:id="@+id/id_btn_mislugares_guardar"
-        android:layout_width="120dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="76dp"
+        android:layout_width="75dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="310dp"
+        android:layout_marginTop="36dp"
         android:backgroundTint="#023DBF"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.234"
+        app:layout_constraintHorizontal_bias="0.884"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/id_rb_mislugares_calificacion"
-        app:layout_constraintVertical_bias="0.158"
-        app:srcCompat="@android:drawable/ic_menu_save" />
+        app:srcCompat="@android:drawable/ic_menu_revert" />
 
     <ImageView
         android:id="@+id/id_img_mislugares_imagen"
-        android:layout_width="125dp"
-        android:layout_height="163dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="150dp"
+        android:layout_height="189dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.785"
+        app:layout_constraintHorizontal_bias="0.938"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/id_rb_mislugares_calificacion"
-        app:layout_constraintVertical_bias="0.09"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout"
         app:srcCompat="@drawable/png_sitimapp_logo" />
 
     <Spinner
         android:id="@+id/id_Sp_mis_lugares_seleccion"
-        android:layout_width="302dp"
+        android:layout_width="300dp"
         android:layout_height="40dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="28dp"
         android:entries="@array/mislugares"
-        android:textAlignment="textStart"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/id_txt_mislugares_descripcion" />
+        app:layout_constraintTop_toBottomOf="@+id/id_rb_mislugares_calificacion"
+        tools:layout_editor_absoluteX="1dp" />
 
 </android.support.constraint.ConstraintLayout>
