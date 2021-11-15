@@ -1,11 +1,7 @@
 <resources>
     <string name="app_name">Sitimapp Colombia</string>
 
-    <string name="home_view_btn_cultura">Cultura</string>
-    <string name="home_view_btn_restaurantes">Restaurantes</string>
-    <string name="home_view_btn_compras">Compras</string>
-    <string name="home_view_btn_diversion">Diversion</string>
-    <string name="home_view_btn_hospedaje">Hospedaje</string>
+    <string name="home_view_btn_sitios">Mi Mapp</string>
     <string name="home_view_btn_favoritos">Favoritos</string>
     <string name="home_view_btn_otroslesgusto">A otros usuarios les gusto</string>
     <string name="home_view_btn_salir">Salir</string>
@@ -34,4 +30,11 @@
     <string name="usuariosinsertar_btnCancelar">Cancelar</string>
     <string name="usuariosinsertar_msjexito_titulo">Registro guardado</string>
     <string name="usuariosinsertar_msjexito_cuerpo">Se ha agregado el registro correspondiente</string>
+    <string name="menumap_mnicultura">Cultura</string>
+    <string name="menumap_mnirestaurante">Restaurante</string>
+    <string name="menumap_mnidiversion">Diversion</string>
+    <string name="menumap_mniaotroslesgusto">A otros les gusto</string>
+    <string name="menumap_mnihospedaje">Hospedaje</string>
+    <string name="menumap_mnicompra">Compras</string>
+
 </resources>
