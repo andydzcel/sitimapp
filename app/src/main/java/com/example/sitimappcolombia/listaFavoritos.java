@@ -13,7 +13,7 @@ public class listaFavoritos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_favoritos);
 
-        ImageButton img_button = (ImageButton) findViewById(R.id.imgbtn_itemslistafavoritos_vermas);
+        /*ImageButton img_button = (ImageButton) findViewById(R.id.imgbtn_itemslistafavoritos_vermas);
         img_button.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -25,6 +25,6 @@ public class listaFavoritos extends AppCompatActivity {
 
                 popup.show();//showing popup menu
             }
-        });//closing the setOnClickListener method
+        });//closing the setOnClickListener method*/
     }
 }
