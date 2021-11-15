@@ -24,16 +24,12 @@ public class Mensajes {
         msj.show();
     }
 
-    public void confirmacion(String titulo, String cuerpo)
+    public void confirmacion(String titulo, String cuerpo, DialogInterface.OnClickListener btnOk)
     {
         AlertDialog.Builder msj = new AlertDialog.Builder(this.contexto);
         msj.setTitle(titulo);
         msj.setMessage(cuerpo);
-        msj.setPositiveButton("Listo", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int i) {
-            }
-        });
+        msj.setPositiveButton("Listo", btnOk);
         msj.create();
         msj.show();
     }

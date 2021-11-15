@@ -1,10 +1,8 @@
 <resources>
     <string name="app_name">Sitimapp Colombia</string>
 
-    <string-array name="lista_prueba">
-
-    </string-array>
     <string name="home_view_btn_sitios">Mi Mapp</string>
+
     <string name="home_view_btn_favoritos">Favoritos</string>
     <string name="home_view_btn_otroslesgusto">A otros usuarios les gusto</string>
     <string name="home_view_btn_salir">Salir</string>
@@ -14,11 +12,24 @@
     <string name="btn_login_contrasenia">Contrasenia</string>
     <string name="btn_login_ingresar">Ingresar</string>
     <string name="btn_login_registrarme">Registrarme</string>
-    <string name="menumap_mnicultura">Cultura</string>
-    <string name="menumap_mnirestaurante">Restaurante</string>
-    <string name="menumap_mnidiversion">Diversion</string>
-    <string name="menumap_mniaotroslesgusto">A otros les gusto</string>
-    <string name="menumap_mnihospedaje">Hospedaje</string>
-    <string name="menumap_mnicompra">Compras</string>
+    <string-array name="mislugares">
+        <item>Restaurantes</item>
+        <item>Comida</item>
+        <item>Hospedaje</item>
+        <item>Cultura</item>
+        <item>Diversion</item>
+        <item>Compras</item>
+    </string-array>
+    <string name="txt_listaFavoritos_encabezado">Mis favoritos</string>
+    <string name="menu_vermapa">Ver mapa</string>
+    <string name="menu_verdetalles">Ver detalles</string>
+    <string name="usuariosinsertar_titulo">Insertar Usuario</string>
+    <string name="usuariosinsertar_txtNombres">Digite los nombres del usuario</string>
+    <string name="usuariosinsertar_txtEmail">Digite el email del usuario</string>
+    <string name="usuariosinsertar_txtClave">Digite la clave del usuario</string>
+    <string name="usuariosinsertar_btnRegistrarse">Registrarse</string>
+    <string name="usuariosinsertar_btnCancelar">Cancelar</string>
+    <string name="usuariosinsertar_msjexito_titulo">Registro guardado</string>
+    <string name="usuariosinsertar_msjexito_cuerpo">Se ha agregado el registro correspondiente</string>
 
 </resources>
