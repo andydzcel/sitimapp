@@ -43,7 +43,7 @@ public class LugaresDAO extends SqliteConex {
         }
         catch (Exception ex)
         {
-
+            System.out.println(ex.getMessage());
         }
 
         return id_lug;
@@ -66,7 +66,7 @@ public class LugaresDAO extends SqliteConex {
                 lug.setLongitud(cregistros.getString(2));
                 lug.setLatitud(cregistros.getString(3));
                 lug.setCategoria(cregistros.getString(4));
-                lug.setCalificacion(cregistros.getFloat(5));
+                lug.setCalificacion(cregistros.getDouble(5));
 
 
                 lugares.add(lug);
