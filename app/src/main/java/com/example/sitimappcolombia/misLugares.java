@@ -1,6 +1,5 @@
 package com.example.sitimappcolombia;
 
-import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,10 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
+import android.widget.RatingBar;
 import android.widget.Spinner;
 
 import com.example.sitimappcolombia.clases.Mensajes;
+import com.example.sitimappcolombia.dao.LugaresDAO;
+import com.example.sitimappcolombia.modelos.Lugares;
+
+import java.util.ArrayList;
 
 public class misLugares extends AppCompatActivity {
 
@@ -21,9 +24,10 @@ public class misLugares extends AppCompatActivity {
         setContentView(R.layout.activity_mis_lugares);
 
         EditText txtnombre= (EditText) findViewById(R.id.id_txt_mislugares_nombre);
+        EditText txtdescripcion= (EditText) findViewById(R.id.id_txt_mislugares_descripcion);
         EditText txtLongitud = (EditText) findViewById(R.id.id_txt_mislugares__longitud);
         EditText txtLatitud = (EditText) findViewById(R.id.id_txt_mislugares_Latitud);
-
+        RatingBar rtbcalificacion = (RatingBar) findViewById(R.id.id_rb_mislugares_calificacion);
         Button btnGuardar = (Button) findViewById(R.id.id_btn_mislugares_guardar);
         Spinner spnLugares = (Spinner) findViewById(R.id.id_Sp_mis_lugares_seleccion);
 
@@ -32,14 +36,17 @@ public class misLugares extends AppCompatActivity {
             public void onClick(View view) {
 
                 String nombre=txtnombre.getText().toString();
+                String descripcion = txtdescripcion.getText().toString();
                 String longitud= txtLongitud.getText().toString();
                 String latitud= txtLatitud.getText().toString();
+                Float calificacion = rtbcalificacion.getRating();
+                String categoria = spnLugares.getSelectedItem().toString();
 
-
-                if(nombre.isEmpty()|| longitud.isEmpty()|| latitud.isEmpty()) {
+                if(nombre.isEmpty()|| descripcion.isEmpty() || longitud.isEmpty()|| latitud.isEmpty()) {
                     new Mensajes(view.getContext()).alerta("Advertencia", "Digite los campos vacíos.");
                 }
                 else{
+                    long id =insertar(txtnombre,txtdescripcion,txtLongitud,txtLatitud,rtbcalificacion,spnLugares);
                     new Mensajes(view.getContext()).confirmacion("Seleccion", "Usted ha seleccionado el lugar " + ((String) spnLugares.getSelectedItem())+" y ha sido guardado exitosamente", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -50,4 +57,25 @@ public class misLugares extends AppCompatActivity {
                 }}
         });
     }
+
+    private long insertar(EditText nombres,EditText descripcion,EditText longitud, EditText latitud, RatingBar calificacion, Spinner categoria)
+    {
+        long id_lug =0;
+
+        Lugares lug = new Lugares();
+        lug.setNombre(nombres.getText().toString());
+        lug.setDescripcion(descripcion.getText().toString());
+        lug.setLongitud(longitud.getText().toString());
+        lug.setLatitud(latitud.getText().toString());
+        lug.setCalificacion(calificacion.getRating());
+        lug.setCategoria(categoria.getSelectedItem().toString());
+
+        LugaresDAO lugdao = new LugaresDAO(this);
+        id_lug = lugdao.insertar(lug);
+
+        ArrayList<Lugares> mislugares = lugdao.listar();
+
+        return id_lug;
+    }
+
 }
