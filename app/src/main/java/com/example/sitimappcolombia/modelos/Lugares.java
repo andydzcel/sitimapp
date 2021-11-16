@@ -7,7 +7,7 @@ public class Lugares {
     private String longitud;
     private String latitud;
     private String categoria;
-    private Float calificacion;
+    private double calificacion;
 
     public Lugares(){
 
@@ -61,11 +61,11 @@ public class Lugares {
         this.categoria = categoria;
     }
 
-    public Float getCalificacion() {
+    public double getCalificacion() {
         return calificacion;
     }
 
-    public void setCalificacion(Float calificacion) {
+    public void setCalificacion(double calificacion) {
         this.calificacion = calificacion;
     }
 }
