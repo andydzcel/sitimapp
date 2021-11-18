@@ -61,12 +61,12 @@ public class LugaresDAO extends SqliteConex {
         if(cregistros.moveToFirst())
             do{
                 Lugares lug = new Lugares();
-                lug.setNombre(cregistros.getString(0));
-                lug.setDescripcion(cregistros.getString(1));
-                lug.setLongitud(cregistros.getString(2));
-                lug.setLatitud(cregistros.getString(3));
-                lug.setCategoria(cregistros.getString(4));
-                lug.setCalificacion(cregistros.getDouble(5));
+                lug.setNombre(cregistros.getString(1));
+                lug.setDescripcion(cregistros.getString(2));
+                lug.setLongitud(cregistros.getString(3));
+                lug.setLatitud(cregistros.getString(4));
+                lug.setCategoria(cregistros.getString(5));
+                lug.setCalificacion(cregistros.getFloat(6));
 
 
                 lugares.add(lug);
