@@ -13,9 +13,9 @@
         android:layout_height="0dp"
         android:layout_marginBottom="475dp"
         android:autoText="false"
-        android:background="#FFF400"
+        android:background="@color/Amarillo"
 
-        android:backgroundTint="#FFF400"
+        android:backgroundTint="@color/Amarillo"
 
         android:fontFamily="@font/montserrat"
 
@@ -67,7 +67,7 @@
         android:layout_marginTop="24dp"
         android:max="5"
         android:numStars="5"
-        android:progressTint="#023DBF"
+        android:progressTint="@color/Azul"
         android:rating="3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -78,9 +78,14 @@
         android:id="@+id/id_btn_mislugares_guardar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="92dp"
+        android:layout_marginStart="76dp"
         android:layout_marginBottom="112dp"
+        android:backgroundTint="@color/Azul"
+        android:drawableStart="@android:drawable/ic_menu_save"
+        android:fontFamily="@font/montserrat"
         android:text="Guardar"
+        android:textColor="@color/Blanco"
+        android:textSize="13dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/id_txt_mislugares_titulo" />

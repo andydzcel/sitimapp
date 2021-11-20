@@ -73,9 +73,11 @@ public class misLugares extends AppCompatActivity {
         LugaresDAO lugdao = new LugaresDAO(this);
         id_lug = lugdao.insertar(lug);
 
-        ArrayList<Lugares> mislugares = lugdao.listar();
+        //ArrayList<Lugares> mislugares = lugdao.listar();
 
         return id_lug;
+
+        //Hacer un if para el caso del boton editar cuando id_lug no es 0
     }
 
 }

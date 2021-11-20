@@ -1,9 +1,7 @@
 package com.example.sitimappcolombia.adaprters;
 
-import android.os.Bundle;
+import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +11,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.example.sitimappcolombia.R;
+import com.example.sitimappcolombia.activity_map;
 import com.example.sitimappcolombia.modelos.Lugares;
 
 import java.util.ArrayList;
@@ -50,9 +49,10 @@ public class itemsAdapter extends RecyclerView.Adapter<itemsAdapter.ViewHolderFa
 
     public class ViewHolderFavoritos extends RecyclerView.ViewHolder {  //ViewHolder es una clase que guarda la referencia de los CardView, que son modificados dinamicamente
 
-        int id;
+        int id_lug;
         TextView txtNombreSitio, txtCategoria;
         RatingBar rtbarCalificacion;
+        ImageButton btnMapa, btnEditar, btnEliminar;
 
         public ViewHolderFavoritos(@NonNull View itemView) {
             super(itemView);
@@ -62,8 +62,32 @@ public class itemsAdapter extends RecyclerView.Adapter<itemsAdapter.ViewHolderFa
             rtbarCalificacion = (RatingBar) itemView.findViewById(R.id.rtbar_listafavoritos_calificacion);
 
 
-            ImageButton btnVerMas = (ImageButton) itemView.findViewById(R.id.imgbtn_itemslistafavoritos_vermas);
-            ImageButton btnEliminar = (ImageButton) itemView.findViewById(R.id.imgbtn_itemslistafavoritos_eliminar);
+            btnMapa = (ImageButton) itemView.findViewById(R.id.imgbtn_itemslistafavoritos_vermapa);
+            btnEditar = (ImageButton) itemView.findViewById(R.id.imgbtn_itemslistafavoritos_editar);
+            btnEliminar = (ImageButton) itemView.findViewById(R.id.imgbtn_itemslistafavoritos_eliminar);
+
+
+            btnMapa.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Intent i = new Intent(itemView.getContext(), activity_map.class);  //El profe plantea cargar la vista del mapa en un fragment
+                    itemView.getContext().startActivity(i);
+
+                }
+            });
+
+
+            /*btnEditar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Intent i = new Intent(itemView.getContext(), editarFavoritos.class);
+                    i.putExtra("id", id_lug);
+                    itemView.getContext().startActivity(i);
+
+                }
+            });*/
 
 
         }
@@ -73,31 +97,8 @@ public class itemsAdapter extends RecyclerView.Adapter<itemsAdapter.ViewHolderFa
             txtNombreSitio.setText(sitio.getNombre());
             txtCategoria.setText(sitio.getCategoria());
             rtbarCalificacion.setRating(sitio.getCalificacion());
-            //id = sitio.getId();
+            id_lug = sitio.getId();
 
         }
     }
 }
-
-/*public class itemsAdapter extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.items_listafavoritos);
-
-        ImageButton btnVermas = (ImageButton) findViewById(R.id.imgbtn_itemslistafavoritos_vermas);
-        btnVermas.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                //Creating the instance of PopupMenu
-                PopupMenu popup = new PopupMenu(itemsAdapter.this, btnVermas);
-                //Inflating the Popup using xml file
-                popup.getMenuInflater().inflate(R.menu.menu_listafavoritos, popup.getMenu());
-
-                popup.show();//showing popup menu
-            }
-        });//closing the setOnClickListener method
-    }
-}*/
