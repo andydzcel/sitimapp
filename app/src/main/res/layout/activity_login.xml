@@ -36,20 +36,6 @@
 
 
     <EditText
-        android:id="@+id/btn_login_contrasenia"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:ems="10"
-        android:fontFamily="@font/montserrat"
-        android:hint="Contraseña*"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/btn_login_ingresar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_login_email" />
-
-    <EditText
         android:id="@+id/btn_login_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -64,6 +50,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgview_login"
         tools:ignore="SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/btn_login_contrasenia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:ems="10"
+        android:fontFamily="@font/montserrat"
+        android:hint="Contraseña*"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/btn_login_ingresar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_login_email" />
 
     <Button
         android:id="@+id/btn_login_registrarse"

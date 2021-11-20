@@ -49,14 +49,20 @@ public class LugaresDAO extends SqliteConex {
         return id_lug;
     }
 
-    public ArrayList<Lugares> listar()
+    public ArrayList<Lugares> listar(@Nullable String criterioBusqueda)
     {
         SqliteConex dbc = new SqliteConex(this.contexto);
         SQLiteDatabase db = dbc.getWritableDatabase();
 
+        String consultaDB = "select * from mislugares";
+
+        if (criterioBusqueda!=null) {
+            consultaDB += " where nombre like '%" + criterioBusqueda + "%' or categoria like '%" + criterioBusqueda + "%'";
+        }
+
         ArrayList<Lugares> lugares = new ArrayList<>();
 
-        Cursor cregistros = db.rawQuery("select * from mislugares",null);
+        Cursor cregistros = db.rawQuery(consultaDB,null);
 
         if(cregistros.moveToFirst())
             do{
@@ -75,6 +81,7 @@ public class LugaresDAO extends SqliteConex {
         cregistros.close();
 
         return lugares;
-    }
+
+        }
 }
 

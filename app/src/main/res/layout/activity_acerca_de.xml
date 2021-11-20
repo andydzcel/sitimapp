@@ -29,7 +29,7 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/montserrat"
         android:gravity="center_horizontal"
-        android:text="Para Misión TIC 2022 en acompañamiento de la Universidad Industrial de Bucaramanga."
+        android:text="Para Misión TIC 2022 en acompañamiento de la Universidad Industrial de Santander."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/img_view_acercade_nombres" />
