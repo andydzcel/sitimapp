@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 
 import com.example.sitimappcolombia.clases.SqliteConex;
 import com.example.sitimappcolombia.modelos.Lugares;
+import com.example.sitimappcolombia.modelos.Usuario;
 
 import java.util.ArrayList;
 
@@ -67,6 +68,7 @@ public class LugaresDAO extends SqliteConex {
         if(cregistros.moveToFirst())
             do{
                 Lugares lug = new Lugares();
+                lug.setId(cregistros.getInt(0));
                 lug.setNombre(cregistros.getString(1));
                 lug.setDescripcion(cregistros.getString(2));
                 lug.setLongitud(cregistros.getString(3));
@@ -83,5 +85,83 @@ public class LugaresDAO extends SqliteConex {
         return lugares;
 
         }
+
+
+    public boolean editar(Lugares lug)
+    {
+        boolean editado = false;
+
+        SqliteConex conexion = new SqliteConex(this.contexto);
+        SQLiteDatabase db = conexion.getWritableDatabase();
+
+        try
+        {
+            db.execSQL("UPDATE mislugares SET nombre = '" + lug.getNombre() + "', descripcion = '" + lug.getDescripcion() + "', longitud = '" + lug.getLongitud()+ "', latitud = '" + lug.getLatitud()+ "', categoria = '" + lug.getCategoria()+ "', calificacion = '" + lug.getCalificacion()+ "' WHERE id_lug = " + lug.getId());
+            editado = true;
+        }
+        catch (Exception ex)
+        {
+
+        }
+
+        return editado;
+    }
+
+
+        public boolean eliminar(long id_lug){
+
+        boolean eliminado = false;
+
+        SqliteConex conexion = new SqliteConex(this.contexto);
+        SQLiteDatabase db = conexion.getWritableDatabase();
+
+
+        try{
+            db.execSQL("DELETE FROM mislugares" +
+                    "    WHERE id_lug = '" + String.valueOf(id_lug)+"'");
+            eliminado=true;
+
+        }catch (Exception ex){
+
+
+
+        }
+
+        return eliminado;
+        }
+
+    public Lugares obtenerLugares(long id_lug)
+    {
+        Lugares lug = null;
+
+        SqliteConex dbc = new SqliteConex(this.contexto);
+        SQLiteDatabase db = dbc.getWritableDatabase();
+
+        String consultaSQL = "SELECT id_lug, nombre, descripcion, longitud, latitud, calificacion, categoria FROM mislugares where id_lug = '" + String.valueOf(id_lug) + "'";
+
+        try {
+            Cursor cregistros = db.rawQuery(consultaSQL, null);
+
+            if (cregistros.moveToFirst()) {
+                lug = new Lugares();
+                lug.setId(cregistros.getInt(0));
+                lug.setNombre(cregistros.getString(1));
+                lug.setDescripcion(cregistros.getString(2));
+                lug.setLongitud(cregistros.getString(3));
+                lug.setLatitud(cregistros.getString(4));
+                lug.setCalificacion(cregistros.getFloat(5));
+                lug.setCategoria(cregistros.getString(6));
+
+            }
+            cregistros.close();
+        }
+        catch (Exception ex)
+        {
+            System.out.println(ex.getMessage());
+        }
+
+        return lug;
+    }
+
 }
 

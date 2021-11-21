@@ -14,8 +14,6 @@ import com.example.sitimappcolombia.clases.Mensajes;
 import com.example.sitimappcolombia.dao.LugaresDAO;
 import com.example.sitimappcolombia.modelos.Lugares;
 
-import java.util.ArrayList;
-
 public class misLugares extends AppCompatActivity {
 
     @Override
@@ -24,8 +22,8 @@ public class misLugares extends AppCompatActivity {
         setContentView(R.layout.activity_mis_lugares);
 
         EditText txtnombre= (EditText) findViewById(R.id.id_txt_mislugares_nombre);
-        EditText txtdescripcion= (EditText) findViewById(R.id.id_txt_mislugares_descripcion);
-        EditText txtLongitud = (EditText) findViewById(R.id.id_txt_mislugares__longitud);
+        EditText txtdescripcion= (EditText) findViewById(R.id.id_txt_mislugares_editar_descripcion);
+        EditText txtLongitud = (EditText) findViewById(R.id.id_txt_mislugares_longitud);
         EditText txtLatitud = (EditText) findViewById(R.id.id_txt_mislugares_Latitud);
         RatingBar rtbcalificacion = (RatingBar) findViewById(R.id.id_rb_mislugares_calificacion);
         Button btnGuardar = (Button) findViewById(R.id.id_btn_mislugares_guardar);
@@ -47,7 +45,7 @@ public class misLugares extends AppCompatActivity {
                 }
                 else{
                     long id =insertar(txtnombre,txtdescripcion,txtLongitud,txtLatitud,rtbcalificacion,spnLugares);
-                    new Mensajes(view.getContext()).confirmacion("Seleccion", "Usted ha seleccionado el lugar " + ((String) spnLugares.getSelectedItem())+" y ha sido guardado exitosamente", new DialogInterface.OnClickListener() {
+                    new Mensajes(view.getContext()).confirmacion("Lugar guardado", "Usted ha guardado el lugar " + (txtnombre.getText().toString())+" y ha sido guardado exitosamente", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         Intent in = new Intent(view.getContext(), activity_home_view.class);
