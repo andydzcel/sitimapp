@@ -35,6 +35,22 @@
     <string name="menumap_mnidiversion">Diversión</string>
     <string name="menumap_mniaotroslesgusto">A otros les gusto</string>
     <string name="menumap_mnihospedaje">Hospedaje</string>
-    <string name="menumap_mnicompra">Compras</string>
+    <string name="menumap_mnicompra">Compra</string>
+    <string name="usuarioseditar_titulo">Editar Usuario</string>
+    <string name="mislugares_txt_nombre">Digita el nombre del sitio</string>
+    <string name="mislugares_txt_descripcion">Escribe una descripcion</string>
+    <string name="mislugares_txt_longitud">Digite longitud</string>
+    <string name="mislugares_txt_latitud">Digite latitud</string>
+    <string name="mislugares_sp_seleccion"></string>
+    <string name="mislugares_rb_calificacion"></string>
+    <string name="mislugares_btn_guardar">Guardar</string>
+    <string name="mislugares_editar_txt_nombre">Digita el nombre del sitio</string>
+    <string name="mislugares_editar_txt_descripcion">Escribe una descripcion</string>
+    <string name="mislugares_editar_txt_longitud">Digite longitud</string>
+    <string name="mislugares_editar_txt_latitud">Digite latitud</string>
+    <string name="mislugares_editar_sp_seleccion"></string>
+    <string name="mislugares_editar_rb_calificacion"></string>
+    <string name="mislugares_editar_btn_guardar">Actualizar</string>
+
 
 </resources>

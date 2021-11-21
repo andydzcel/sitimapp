@@ -1,5 +1,7 @@
 package com.example.sitimappcolombia.adaprters;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -12,6 +14,11 @@ import android.widget.TextView;
 
 import com.example.sitimappcolombia.R;
 import com.example.sitimappcolombia.activity_map;
+import com.example.sitimappcolombia.clases.Mensajes;
+import com.example.sitimappcolombia.dao.LugaresDAO;
+import com.example.sitimappcolombia.listaFavoritos;
+import com.example.sitimappcolombia.misLugares;
+import com.example.sitimappcolombia.misLugares_editar;
 import com.example.sitimappcolombia.modelos.Lugares;
 
 import java.util.ArrayList;
@@ -78,18 +85,48 @@ public class itemsAdapter extends RecyclerView.Adapter<itemsAdapter.ViewHolderFa
             });
 
 
-            /*btnEditar.setOnClickListener(new View.OnClickListener() {
+            btnEditar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
-                    Intent i = new Intent(itemView.getContext(), editarFavoritos.class);
-                    i.putExtra("id", id_lug);
+                    Intent i = new Intent(itemView.getContext(), misLugares_editar.class);
+                    i.putExtra("id_lug", id_lug);
                     itemView.getContext().startActivity(i);
 
                 }
-            });*/
+            });
 
+            btnEliminar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
 
+                    AlertDialog.Builder msj = new AlertDialog.Builder(view.getContext());
+                    msj.setTitle("Advertencia");
+                    msj.setMessage("Está a punto de eliminar un lugar.¿Desea continuar?");
+                    msj.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            LugaresDAO db = new LugaresDAO(view.getContext());
+                            if (db.eliminar(id_lug))
+                                new Mensajes(view.getContext()).alerta("Registro eliminado","Se ha eliminado el registro.");
+                            else
+                                new Mensajes(view.getContext()).alerta("Error","Se ha producido un error en el proceso.");
+
+                            Intent in = new Intent(view.getContext(), listaFavoritos.class);
+                            view.getContext().startActivity(in);
+                        }
+
+                    });
+                    msj.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            new Mensajes(view.getContext()).alerta("Proceso cancelado","Se ha cancelado el proceso.");
+                        }
+                    });
+                    msj.create();
+                    msj.show();
+                }
+            });
         }
 
         public void cargarDatos (Lugares sitio) {
