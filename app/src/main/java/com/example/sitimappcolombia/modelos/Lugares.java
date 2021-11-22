@@ -4,8 +4,8 @@ public class Lugares {
     private int id_lug;
     private String nombre;
     private String descripcion;
-    private String longitud;
-    private String latitud;
+    private Double longitud;
+    private Double latitud;
     private String categoria;
     private float calificacion;
 
@@ -13,11 +13,11 @@ public class Lugares {
 
     }
 
-    public int getId() {
+    public int getId_lug() {
         return id_lug;
     }
 
-    public void setId(int id_lug) {
+    public void setId_lug(int id_lug) {
         this.id_lug = id_lug;
     }
 
@@ -37,19 +37,19 @@ public class Lugares {
         this.descripcion = descripcion;
     }
 
-    public String getLongitud() {
+    public Double getLongitud() {
         return longitud;
     }
 
-    public void setLongitud(String longitud) {
+    public void setLongitud(Double longitud) {
         this.longitud = longitud;
     }
 
-    public String getLatitud() {
+    public Double getLatitud() {
         return latitud;
     }
 
-    public void setLatitud(String latitud) {
+    public void setLatitud(Double latitud) {
         this.latitud = latitud;
     }
 
@@ -61,7 +61,9 @@ public class Lugares {
         this.categoria = categoria;
     }
 
-    public float getCalificacion() { return calificacion; }
+    public float getCalificacion() {
+        return calificacion;
+    }
 
     public void setCalificacion(float calificacion) {
         this.calificacion = calificacion;

@@ -63,8 +63,8 @@ public class misLugares extends AppCompatActivity {
         Lugares lug = new Lugares();
         lug.setNombre(nombres.getText().toString());
         lug.setDescripcion(descripcion.getText().toString());
-        lug.setLongitud(longitud.getText().toString());
-        lug.setLatitud(latitud.getText().toString());
+        lug.setLongitud(Double.parseDouble(longitud.getText().toString()));
+        lug.setLatitud(Double.parseDouble(latitud.getText().toString()));
         lug.setCalificacion(calificacion.getRating());
         lug.setCategoria(categoria.getSelectedItem().toString());
 
