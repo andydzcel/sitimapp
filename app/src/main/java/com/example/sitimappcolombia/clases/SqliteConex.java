@@ -18,7 +18,7 @@ public class SqliteConex extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase SQLiteDatabase) {
         SQLiteDatabase.execSQL("CREATE TABLE usuarios (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nombres TEXT NOT NULL,email TEXT NOT NULL, clave TEXT NOT NULL)");
-        SQLiteDatabase.execSQL("CREATE TABLE mislugares (id_lug INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nombre TEXT NOT NULL, descripcion TEXT NOT NULL,longitud TEXT NOT NULL,latitud TEXT NOT NULL,categoria TEXT NOT NULL,calificacion DECIMAL(2,1) NOT NULL)");
+        SQLiteDatabase.execSQL("CREATE TABLE mislugares (id_lug INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, nombre TEXT NOT NULL, descripcion TEXT NOT NULL,longitud decimal(3,9) NOT NULL,latitud decimal(3,9) NOT NULL,categoria TEXT NOT NULL,calificacion DECIMAL(2,1) NOT NULL)");
     }
 
     @Override

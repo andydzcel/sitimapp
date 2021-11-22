@@ -68,11 +68,11 @@ public class LugaresDAO extends SqliteConex {
         if(cregistros.moveToFirst())
             do{
                 Lugares lug = new Lugares();
-                lug.setId(cregistros.getInt(0));
+                lug.setId_lug(cregistros.getInt(0));
                 lug.setNombre(cregistros.getString(1));
                 lug.setDescripcion(cregistros.getString(2));
-                lug.setLongitud(cregistros.getString(3));
-                lug.setLatitud(cregistros.getString(4));
+                lug.setLongitud(cregistros.getDouble(3));
+                lug.setLatitud(cregistros.getDouble(4));
                 lug.setCategoria(cregistros.getString(5));
                 lug.setCalificacion(cregistros.getFloat(6));
 
@@ -96,7 +96,7 @@ public class LugaresDAO extends SqliteConex {
 
         try
         {
-            db.execSQL("UPDATE mislugares SET nombre = '" + lug.getNombre() + "', descripcion = '" + lug.getDescripcion() + "', longitud = '" + lug.getLongitud()+ "', latitud = '" + lug.getLatitud()+ "', categoria = '" + lug.getCategoria()+ "', calificacion = '" + lug.getCalificacion()+ "' WHERE id_lug = " + lug.getId());
+            db.execSQL("UPDATE mislugares SET nombre = '" + lug.getNombre() + "', descripcion = '" + lug.getDescripcion() + "', longitud = '" + String.valueOf(lug.getLongitud())+ "', latitud = '" + String.valueOf(lug.getLatitud())+ "', categoria = '" + lug.getCategoria()+ "', calificacion = '" + lug.getCalificacion()+ "' WHERE id_lug = " + lug.getId_lug());
             editado = true;
         }
         catch (Exception ex)
@@ -144,11 +144,11 @@ public class LugaresDAO extends SqliteConex {
 
             if (cregistros.moveToFirst()) {
                 lug = new Lugares();
-                lug.setId(cregistros.getInt(0));
+                lug.setId_lug(cregistros.getInt(0));
                 lug.setNombre(cregistros.getString(1));
                 lug.setDescripcion(cregistros.getString(2));
-                lug.setLongitud(cregistros.getString(3));
-                lug.setLatitud(cregistros.getString(4));
+                lug.setLongitud(cregistros.getDouble(3));
+                lug.setLatitud(cregistros.getDouble(4));
                 lug.setCalificacion(cregistros.getFloat(5));
                 lug.setCategoria(cregistros.getString(6));
 

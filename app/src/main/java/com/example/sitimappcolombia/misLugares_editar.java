@@ -41,8 +41,8 @@ public class misLugares_editar extends AppCompatActivity {
 
             txtnombre.setText(this.mislugaresActual.getNombre());
             txtdescripcion.setText(this.mislugaresActual.getDescripcion());
-            txtLongitud.setText(this.mislugaresActual.getLongitud());
-            txtLatitud.setText(this.mislugaresActual.getLatitud());
+            txtLongitud.setText(this.mislugaresActual.getLongitud().toString());
+            txtLatitud.setText(this.mislugaresActual.getLatitud().toString());
             rtbcalificacion.setRating(this.mislugaresActual.getCalificacion());
             /*spnLugares.setOnItemSelectedListener(this.mislugaresActual.getCategoria());*/
 
@@ -67,8 +67,8 @@ public class misLugares_editar extends AppCompatActivity {
 
                     mislugaresActual.setNombre(nombre);
                     mislugaresActual.setDescripcion(descripcion);
-                    mislugaresActual.setLongitud(longitud);
-                    mislugaresActual.setLatitud(latitud);
+                    mislugaresActual.setLongitud(Double.parseDouble(longitud));
+                    mislugaresActual.setLatitud(Double.parseDouble(latitud));
                     mislugaresActual.setCalificacion(calificacion);
                    /* mislugaresActual.setCategoria(categoria);*/
 

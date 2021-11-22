@@ -134,7 +134,7 @@ public class itemsAdapter extends RecyclerView.Adapter<itemsAdapter.ViewHolderFa
             txtNombreSitio.setText(sitio.getNombre());
             txtCategoria.setText(sitio.getCategoria());
             rtbarCalificacion.setRating(sitio.getCalificacion());
-            id_lug = sitio.getId();
+            id_lug = sitio.getId_lug();
 
         }
     }
