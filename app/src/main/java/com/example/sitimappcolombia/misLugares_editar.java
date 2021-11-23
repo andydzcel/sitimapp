@@ -9,7 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 
+import com.example.sitimappcolombia.adaprters.ViewSp_Adpater_mis_lugares;
 import com.example.sitimappcolombia.clases.Mensajes;
 import com.example.sitimappcolombia.dao.LugaresDAO;
 import com.example.sitimappcolombia.modelos.Lugares;
@@ -39,12 +41,18 @@ public class misLugares_editar extends AppCompatActivity {
             LugaresDAO db = new LugaresDAO(this);
             this.mislugaresActual = db.obtenerLugares(id_lug);
 
+            ViewSp_Adpater_mis_lugares adapter = new ViewSp_Adpater_mis_lugares(new String[]{
+                    "Restaurantes","Comida","Hospedaje","Cultura","Diversión","Compras"});
+
+
+
             txtnombre.setText(this.mislugaresActual.getNombre());
             txtdescripcion.setText(this.mislugaresActual.getDescripcion());
             txtLongitud.setText(this.mislugaresActual.getLongitud().toString());
             txtLatitud.setText(this.mislugaresActual.getLatitud().toString());
             rtbcalificacion.setRating(this.mislugaresActual.getCalificacion());
-            /*spnLugares.setOnItemSelectedListener(this.mislugaresActual.getCategoria());*/
+
+            spnLugares.setAdapter(adapter);
 
         }
 
@@ -58,7 +66,7 @@ public class misLugares_editar extends AppCompatActivity {
                 String longitud= txtLongitud.getText().toString();
                 String latitud= txtLatitud.getText().toString();
                 Float calificacion = rtbcalificacion.getRating();
-                /*String categoria = spnLugares.getSelectedItem().toString();*/
+                String categoria = (String) spnLugares.getSelectedItem();
 
                 if(nombre.isEmpty()|| descripcion.isEmpty() || longitud.isEmpty()|| latitud.isEmpty()) {
                     new Mensajes(view.getContext()).alerta("Advertencia", "Digite los campos vacíos.");
@@ -70,11 +78,11 @@ public class misLugares_editar extends AppCompatActivity {
                     mislugaresActual.setLongitud(Double.parseDouble(longitud));
                     mislugaresActual.setLatitud(Double.parseDouble(latitud));
                     mislugaresActual.setCalificacion(calificacion);
-                   /* mislugaresActual.setCategoria(categoria);*/
+                    mislugaresActual.setCategoria(categoria);
 
 
-                   LugaresDAO db = new LugaresDAO(view.getContext());
-                   db.editar(mislugaresActual);
+                    LugaresDAO db = new LugaresDAO(view.getContext());
+                    db.editar(mislugaresActual);
                     new Mensajes(view.getContext()).confirmacion("Registro editado", "Usted ha editado el lugar " + ( txtnombre.getText().toString())+" y ha sido guardado exitosamente", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
