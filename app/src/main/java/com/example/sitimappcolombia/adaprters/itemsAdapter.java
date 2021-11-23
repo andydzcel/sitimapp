@@ -3,21 +3,19 @@ package com.example.sitimappcolombia.adaprters;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.RatingBar;
 import android.widget.TextView;
-
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import com.example.sitimappcolombia.R;
 import com.example.sitimappcolombia.activity_map;
 import com.example.sitimappcolombia.clases.Mensajes;
 import com.example.sitimappcolombia.dao.LugaresDAO;
 import com.example.sitimappcolombia.listaFavoritos;
-import com.example.sitimappcolombia.misLugares;
 import com.example.sitimappcolombia.misLugares_editar;
 import com.example.sitimappcolombia.modelos.Lugares;
 
@@ -59,7 +57,7 @@ public class itemsAdapter extends RecyclerView.Adapter<itemsAdapter.ViewHolderFa
         int id_lug;
         TextView txtNombreSitio, txtCategoria;
         RatingBar rtbarCalificacion;
-        ImageButton btnMapa, btnEditar, btnEliminar;
+        ImageButton btnDetalles, btnMapa, btnEditar, btnEliminar;
 
         public ViewHolderFavoritos(@NonNull View itemView) {
             super(itemView);
@@ -69,9 +67,20 @@ public class itemsAdapter extends RecyclerView.Adapter<itemsAdapter.ViewHolderFa
             rtbarCalificacion = (RatingBar) itemView.findViewById(R.id.rtbar_listafavoritos_calificacion);
 
 
+            btnDetalles = (ImageButton) itemView.findViewById(R.id.imgbtn_itemslistafavoritos_verdetalles);
             btnMapa = (ImageButton) itemView.findViewById(R.id.imgbtn_itemslistafavoritos_vermapa);
             btnEditar = (ImageButton) itemView.findViewById(R.id.imgbtn_itemslistafavoritos_editar);
             btnEliminar = (ImageButton) itemView.findViewById(R.id.imgbtn_itemslistafavoritos_eliminar);
+
+
+            btnDetalles.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+
+
+                }
+            });
 
 
             btnMapa.setOnClickListener(new View.OnClickListener() {

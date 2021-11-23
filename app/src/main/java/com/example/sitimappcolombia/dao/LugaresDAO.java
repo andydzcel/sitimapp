@@ -4,7 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.example.sitimappcolombia.clases.SqliteConex;
 import com.example.sitimappcolombia.modelos.Lugares;

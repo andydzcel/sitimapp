@@ -1,14 +1,11 @@
 package com.example.sitimappcolombia.adaprters;
 
 import android.database.DataSetObserver;
-import android.support.v7.widget.AppCompatCheckBox;
-import android.support.v7.widget.AppCompatCheckedTextView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
-import android.widget.TwoLineListItem;
 
 import com.example.sitimappcolombia.R;
 
