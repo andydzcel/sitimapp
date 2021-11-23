@@ -112,8 +112,7 @@ public class itemsAdapter extends RecyclerView.Adapter<itemsAdapter.ViewHolderFa
                             else
                                 new Mensajes(view.getContext()).alerta("Error","Se ha producido un error en el proceso.");
 
-                            Intent in = new Intent(view.getContext(), listaFavoritos.class);
-                            view.getContext().startActivity(in);
+                            ((listaFavoritos) itemView.getContext()).recreate();
                         }
 
                     });
