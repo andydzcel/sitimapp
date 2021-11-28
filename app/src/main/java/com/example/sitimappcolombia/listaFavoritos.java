@@ -51,7 +51,7 @@ public class listaFavoritos extends AppCompatActivity {
         recyclerFavoritos.setLayoutManager(new LinearLayoutManager(this));  //Agrego un layout lineal en el recycler para mostrar los sitios guardados uno debajo del otro.
 
         LugaresDAO db = new LugaresDAO(this);
-        itemsAdapter itemAdapter = new itemsAdapter(db.listar(txtBusqueda.getText().toString()));  //Metodo listar en clase asociada a la base de datos.
+        itemsAdapter itemAdapter = new itemsAdapter(db.listar(txtBusqueda.getText().toString()), getSupportFragmentManager());  //Metodo listar en clase asociada a la base de datos.
 
         recyclerFavoritos.setAdapter(itemAdapter);
     }
