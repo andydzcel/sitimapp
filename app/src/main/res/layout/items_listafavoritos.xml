@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/linearLayout4"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_weight="0"
@@ -14,23 +13,23 @@
         android:layout_weight="1"
         android:backgroundTint="@color/Azul_Oscuro_fondos_claros"
         app:cardCornerRadius="15dp"
-        tools:layout_editor_absoluteX="1dp">
+        app:layout_constraintStart_toStartOf="parent">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="1dp"
             app:cardCornerRadius="15dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="horizontal">
 
@@ -42,7 +41,7 @@
                         android:background="#00FFFFFF"
                         android:scaleX="1.5"
                         android:scaleY="1.5"
-                        app:srcCompat="@drawable/ic_ubicacion" />
+                        app:srcCompat="@drawable/ic_mapa" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -80,6 +79,15 @@
                                 android:textSize="12dp"
                                 android:textStyle="italic" />
 
+                            <TextView
+                                android:id="@+id/textView14"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Tex"
+                                android:textSize="12sp"
+                                android:visibility="invisible" />
+
                             <RatingBar
                                 android:id="@+id/rtbar_listafavoritos_calificacion"
                                 style="?android:attr/ratingBarStyleSmall"
@@ -97,15 +105,10 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1" />
-
-                            <ImageButton
-                                android:id="@+id/imgbtn_itemslistafavoritos_vermapa"
-                                android:layout_width="40dp"
-                                android:layout_height="30dp"
-                                android:layout_weight="0"
-                                android:backgroundTint="#00FFFFFF"
-                                app:srcCompat="@drawable/ic_mapa" />
+                                android:layout_weight="1"
+                                android:text="Tex"
+                                android:textSize="12sp"
+                                android:visibility="invisible" />
 
                             <ImageButton
                                 android:id="@+id/imgbtn_itemslistafavoritos_editar"

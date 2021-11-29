@@ -10,24 +10,29 @@ import android.widget.ImageButton;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.sitimappcolombia.R;
 import com.example.sitimappcolombia.activity_map;
 import com.example.sitimappcolombia.clases.Mensajes;
 import com.example.sitimappcolombia.dao.LugaresDAO;
+import com.example.sitimappcolombia.fragmentDetalles;
 import com.example.sitimappcolombia.listaFavoritos;
 import com.example.sitimappcolombia.misLugares_editar;
 import com.example.sitimappcolombia.modelos.Lugares;
+import com.example.sitimappcolombia.viewmodels.LugarViewModel;
 
 import java.util.ArrayList;
 
 public class itemsAdapter extends RecyclerView.Adapter<itemsAdapter.ViewHolderFavoritos> {
 
-
     ArrayList<Lugares> sitios;
+    FragmentManager fragmento;
 
-    public itemsAdapter (ArrayList<Lugares> sitio) {
-        this.sitios = sitio; //Se piden los sitios que se agregan
+    public itemsAdapter (ArrayList<Lugares> sitio, FragmentManager fManager) {
+        this.sitios = sitio;  //Se piden los sitios que se agregan
+        this.fragmento= fManager;
     }
 
     @NonNull
@@ -37,7 +42,7 @@ public class itemsAdapter extends RecyclerView.Adapter<itemsAdapter.ViewHolderFa
         //Inflater permite seleccionar y cargar una vista/layout
 
         View vista = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.items_listafavoritos, null, false);  //root quiere decir que si el layout en cuestion hace parte de un MainActivity; en este caso como es un layout suelto, se pone "null"
-        return new ViewHolderFavoritos (vista);
+        return new ViewHolderFavoritos (vista, fragmento);
     }
 
     @Override
@@ -59,7 +64,7 @@ public class itemsAdapter extends RecyclerView.Adapter<itemsAdapter.ViewHolderFa
         RatingBar rtbarCalificacion;
         ImageButton btnDetalles, btnMapa, btnEditar, btnEliminar;
 
-        public ViewHolderFavoritos(@NonNull View itemView) {
+        public ViewHolderFavoritos(@NonNull View itemView, @NonNull FragmentManager fragmentoDetalles) {
             super(itemView);
 
             txtNombreSitio = (TextView) itemView.findViewById(R.id.txt_itemslistafavoritos_nombre);
@@ -68,7 +73,6 @@ public class itemsAdapter extends RecyclerView.Adapter<itemsAdapter.ViewHolderFa
 
 
             btnDetalles = (ImageButton) itemView.findViewById(R.id.imgbtn_itemslistafavoritos_verdetalles);
-            btnMapa = (ImageButton) itemView.findViewById(R.id.imgbtn_itemslistafavoritos_vermapa);
             btnEditar = (ImageButton) itemView.findViewById(R.id.imgbtn_itemslistafavoritos_editar);
             btnEliminar = (ImageButton) itemView.findViewById(R.id.imgbtn_itemslistafavoritos_eliminar);
 
@@ -77,21 +81,11 @@ public class itemsAdapter extends RecyclerView.Adapter<itemsAdapter.ViewHolderFa
                 @Override
                 public void onClick(View v) {
 
-
-
-                }
-            });
-
-
-            btnMapa.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                    Intent i = new Intent(itemView.getContext(), activity_map.class);  //El profe plantea cargar la vista del mapa en un fragment
-                    itemView.getContext().startActivity(i);
+                fragmentDetalles.newInstance(id_lug).show(fragmento, null);
 
                 }
             });
+
 
 
             btnEditar.setOnClickListener(new View.OnClickListener() {
