@@ -6,9 +6,6 @@ import junit.framework.TestCase;
 
 public class PruebaUnitariaTest extends TestCase {
 
-    public void testCamposVacios()
-    {
-        assertEquals(true, login.camposVacios("",""));
-    }
+
 
 }
