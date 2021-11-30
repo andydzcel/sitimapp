@@ -8,6 +8,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.sitimappcolombia.clases.Mensajes;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class activity_home_view extends AppCompatActivity {
 
@@ -50,10 +51,11 @@ public class activity_home_view extends AppCompatActivity {
         btn_salir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                FirebaseAuth autenticacion = FirebaseAuth.getInstance();
+                autenticacion.signOut();
+                onBackPressed();
                 new Mensajes(v.getContext()).toast("Has seleccionado 'Salir'");
-                Intent i= new Intent(v.getContext(),login.class);
-                startActivity(i);
-            }
+             }
         });
 
         Button btn_sitios = (Button) findViewById(R.id.btn_home_view_sitios);

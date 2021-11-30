@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "971956836199",
+    "project_id": "sitimapp-col",
+    "storage_bucket": "sitimapp-col.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:971956836199:android:427eb2f9f48e692980c1c2",
+        "android_client_info": {
+          "package_name": "com.example.sitimappcolombia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "971956836199-5o7dk9n71f00mqe3vnj207m1s59ncakk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2wWD6desj5t_Cn6XzDotgT63e5aMuURI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "971956836199-5o7dk9n71f00mqe3vnj207m1s59ncakk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
