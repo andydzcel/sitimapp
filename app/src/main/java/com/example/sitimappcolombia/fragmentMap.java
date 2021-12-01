@@ -72,7 +72,7 @@ public class fragmentMap extends DialogFragment {
                     googleMap.clear();
                     LatLng sydney = new LatLng(lugares.getLatitud(), lugares.getLongitud());
                     googleMap.addMarker(new MarkerOptions().position(sydney).title(lugares.getNombre()));
-                    googleMap.setMinZoomPreference(18);
+                    googleMap.setMinZoomPreference(12);
                     googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
                 }
             });

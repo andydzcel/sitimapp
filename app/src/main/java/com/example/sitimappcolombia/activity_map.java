@@ -45,8 +45,8 @@ public class activity_map extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater propiedades = getMenuInflater();
-        propiedades.inflate(R.menu.menumap,menu);
+        /*MenuInflater propiedades = getMenuInflater();
+        propiedades.inflate(R.menu.menumap,menu);*/
 
         return super.onCreateOptionsMenu(menu);
     }
