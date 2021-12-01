@@ -50,7 +50,7 @@ public class registroUsuarios extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful())
-                                        irMenu(email);
+                                        irLogin(email);
                                     else
                                         verMensaje("Ocurrió un error al registrar el usuario.");
                                 }
@@ -112,7 +112,7 @@ public class registroUsuarios extends AppCompatActivity {
         msj.show();
     }
 
-    private void irMenu(String email) {
+    private void irLogin(String email) {
         Intent i = new Intent(this, login.class);
         i.putExtra("email", email);
         startActivity(i);

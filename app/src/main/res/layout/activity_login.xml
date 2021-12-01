@@ -24,16 +24,14 @@
         android:id="@+id/btn_login_ingresar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="116dp"
         android:layout_marginBottom="33dp"
         android:background="#FFD400"
         android:fontFamily="@font/montserrat"
         android:text="Ingresar"
         app:layout_constraintBottom_toTopOf="@+id/btn_login_registrarse"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_login_contrasenia" />
-
 
     <EditText
         android:id="@+id/btn_login_email"
@@ -81,5 +79,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_login_google"
+        android:layout_width="61dp"
+        android:layout_height="53dp"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/btn_login_registrarse"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.212"
+        app:layout_constraintStart_toEndOf="@+id/btn_login_ingresar"
+        app:layout_constraintTop_toBottomOf="@+id/btn_login_contrasenia"
+        app:layout_constraintVertical_bias="0.431"
+        app:srcCompat="@drawable/google" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
