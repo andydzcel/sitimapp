@@ -8,16 +8,24 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.sitimappcolombia.clases.Mensajes;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GoogleAuthProvider;
 
 public class login extends AppCompatActivity {
 
@@ -40,6 +48,7 @@ public class login extends AppCompatActivity {
 
         Button btnAcceder = (Button) findViewById(R.id.btn_login_ingresar);
         Button btnQuieroRegistrarme = (Button) findViewById(R.id.btn_login_registrarse);
+        ImageButton btnGoogle = (ImageButton) findViewById(R.id.btn_login_google);
 
         btnAcceder.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,8 +83,62 @@ public class login extends AppCompatActivity {
                 startActivity(in);
             }
         });
+
+        btnGoogle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                GoogleSignInOptions gso = new
+                        GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                        .requestIdToken(getString(R.string.llave_cliente_web))
+                        .requestEmail()
+                        .build();
+
+                Intent signInIntent = GoogleSignIn.getClient(view.getContext(), gso).getSignInIntent();
+                startActivityForResult(signInIntent, RC_SIGN_IN);
+
+
+
+
+            }
+        });
+
+
     }
-        private boolean validarCampos() {
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Activity activityActual = this;
+
+        if(requestCode == RC_SIGN_IN)
+        {
+            try {
+                Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+                GoogleSignInAccount cuenta = task.getResult(ApiException.class);
+                AuthCredential credencial = GoogleAuthProvider.getCredential(cuenta.getIdToken(), null);
+                autenticacionFirebase.signInWithCredential(credencial).addOnCompleteListener(activityActual, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful())
+                        {
+                            FirebaseUser usuario = autenticacionFirebase.getCurrentUser();
+                            irMenu(usuario.getEmail());
+                        }
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+
+        }
+
+    }
+
+    private boolean validarCampos() {
             boolean camposDiligenciados = false;
 
             EditText txtEmail = (EditText) findViewById(R.id.btn_login_email);
@@ -91,11 +154,12 @@ public class login extends AppCompatActivity {
         }
 
 
-        private void irMenu(String email) {
+    private void irMenu(String email) {
             Intent i = new Intent(this, activity_home_view.class);
             i.putExtra("email", email);
             startActivity(i);
         }
+
 
 }
 

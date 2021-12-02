@@ -53,8 +53,10 @@ public class activity_home_view extends AppCompatActivity {
             public void onClick(View v) {
                 FirebaseAuth autenticacion = FirebaseAuth.getInstance();
                 autenticacion.signOut();
-                onBackPressed();
                 new Mensajes(v.getContext()).toast("Has seleccionado 'Salir'");
+                Intent i = new Intent(v.getContext(),login.class);
+                startActivity(i);
+
              }
         });
 
