@@ -1,7 +1,5 @@
 package com.example.sitimappcolombia;
 
-import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,112 +7,83 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.sitimappcolombia.clases.Mensajes;
 import com.example.sitimappcolombia.dao.UsuarioDAO;
 import com.example.sitimappcolombia.modelos.Usuario;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class registroUsuarios extends AppCompatActivity {
-
-    private FirebaseAuth autenticacionFirebase;
-    private static final int RC_SIGN_IN = 9001;
-    private String email = "";
-    private String clave = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        autenticacionFirebase = FirebaseAuth.getInstance();
-        //autenticacionFirebase.sendPasswordResetEmail(email);
-
         setContentView(R.layout.activity_registro_usuarios);
 
-        Button btnRegistro = (Button) findViewById(R.id.usuariosinsertar_btnRegistrarse);
+        EditText txtNombres =(EditText) findViewById(R.id.usuariosinsertar_txtNombres);
+        EditText txtEmail =(EditText) findViewById(R.id.usuariosinsertar_txtEmail);
+        EditText txtClave =(EditText) findViewById(R.id.usuariosinsertar_txtClave);
+        Button btn_registrarse = (Button) findViewById(R.id.usuariosinsertar_btnRegistrarse);
 
-
-        btnRegistro.setOnClickListener(new View.OnClickListener() {
+        btn_registrarse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (validarCampos()) {
-                    autenticacionFirebase.createUserWithEmailAndPassword(email, clave).
-                            addOnCompleteListener((Activity) view.getContext(), new OnCompleteListener<AuthResult>() {
-                                @Override
-                                public void onComplete(@NonNull Task<AuthResult> task) {
-                                    if (task.isSuccessful())
-                                        irLogin(email);
-                                    else
-                                        verMensaje("Ocurrió un error al registrar el usuario.");
-                                }
-                            });
-                } else
+                String nombres = txtNombres.getText().toString();
+                String email = txtEmail.getText().toString();
+                String clave = txtClave.getText().toString();
+
+                if(email.isEmpty() || clave.isEmpty() || nombres.isEmpty()) {
                     new Mensajes(view.getContext()).alerta("Advertencia", "Digite los campos vacíos.");
+                }
+                else
+                {
+                    long id =insertar(txtNombres,txtEmail,txtClave);
+                    new Mensajes(view.getContext()).confirmacion("Registro completado", "Ya estás listo para usar Sitimapp Colombia.", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            Intent in = new Intent(view.getContext(), login.class);
+                            startActivity(in);
+                        }
+                    });
+                }
             }
         });
 
     }
 
-    /*@Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        Activity activityAcual = this;
+    private long insertar(EditText nombres,EditText email,EditText clave)
+    {
+        long id =0;
 
-        if (requestCode == RC_SIGN_IN) {
-            try {
-                Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-                GoogleSignInAccount cuenta = task.getResult(ApiException.class);
-                AuthCredential credencial = GoogleAuthProvider.getCredential(cuenta.getIdToken(), null);
-                autenticacionFirebase.signInWithCredential(credencial).addOnCompleteListener(activityAcual, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            FirebaseUser usuario = autenticacionFirebase.getCurrentUser();
-                            irMenu(usuario.getEmail());
-                        }
-                    }
-                });
-            } catch (Exception ex) {
+        Usuario us = new Usuario();
+        us.setNombres(nombres.getText().toString());
+        us.setEmail(email.getText().toString());
+        us.setClave(clave.getText().toString());
 
-            }
+        UsuarioDAO usdao = new UsuarioDAO(this);
+        id = usdao.insertar(us);
+
+        us.setId((int) id);
+
+        //Insertar en Firebase Real-Time
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        database.setPersistenceEnabled(true);
+        database.getReference().child("Usuario").child(UUID.randomUUID().toString()).setValue(us);
+
+        //Registro de usuario
+        FirebaseAuth autenticacion = FirebaseAuth.getInstance();
+        autenticacion.createUserWithEmailAndPassword(us.getEmail(), us.getClave());
+
+        ArrayList<Usuario> usuarios = usdao.listar();
 
 
-        }
 
-    }*/
-
-    private boolean validarCampos() {
-        boolean camposDiligenciados = false;
-
-        EditText txtEmail = (EditText) findViewById(R.id.usuariosinsertar_txtEmail);
-        EditText txtClave = (EditText) findViewById(R.id.usuariosinsertar_txtClave);
-
-        if (!txtEmail.getText().toString().isEmpty() && !txtClave.getText().toString().isEmpty()) {
-            this.email = txtEmail.getText().toString();
-            this.clave = txtClave.getText().toString();
-            camposDiligenciados = true;
-        }
-
-        return camposDiligenciados;
+        return id;
     }
 
-    private void verMensaje(String cuerpo) {
-        AlertDialog.Builder msj = new AlertDialog.Builder(this);
-        msj.setMessage(cuerpo);
-        msj.create();
-        msj.show();
-    }
-
-    private void irLogin(String email) {
-        Intent i = new Intent(this, login.class);
-        i.putExtra("email", email);
-        startActivity(i);
-    }
 }
