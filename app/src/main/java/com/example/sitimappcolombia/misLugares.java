@@ -74,6 +74,7 @@ public class misLugares extends AppCompatActivity {
 
         //ArrayList<Lugares> mislugares = lugdao.listar();
 
+
         return id_lug;
 
         //Hacer un if para el caso del boton editar cuando id_lug no es 0
