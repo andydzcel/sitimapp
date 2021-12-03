@@ -36,6 +36,7 @@ public class registroUsuarios extends AppCompatActivity {
 
         btn_registrarse.setOnClickListener(new View.OnClickListener() {
             @Override
+            
             public void onClick(View view) {
                 String nombres = txtNombres.getText().toString();
                 String email = txtEmail.getText().toString();

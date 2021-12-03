@@ -1,7 +1,6 @@
 package com.example.sitimappcolombia;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -80,6 +79,7 @@ public class login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent in = new Intent(view.getContext(), registroUsuarios.class);
+
                 startActivity(in);
             }
         });
