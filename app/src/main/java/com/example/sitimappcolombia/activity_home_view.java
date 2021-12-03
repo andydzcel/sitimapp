@@ -8,8 +8,6 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.sitimappcolombia.clases.Mensajes;
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class activity_home_view extends AppCompatActivity {
@@ -55,9 +53,6 @@ public class activity_home_view extends AppCompatActivity {
             public void onClick(View v) {
                 FirebaseAuth autenticacion = FirebaseAuth.getInstance();
                 autenticacion.signOut();
-
-                GoogleSignIn.getClient(v.getContext(),new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).build()).signOut();
-
                 new Mensajes(v.getContext()).toast("Has seleccionado 'Salir'");
                 Intent i = new Intent(v.getContext(),login.class);
                 startActivity(i);

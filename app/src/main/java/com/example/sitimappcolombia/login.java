@@ -79,7 +79,6 @@ public class login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent in = new Intent(view.getContext(), registroUsuarios.class);
-
                 startActivity(in);
             }
         });
