@@ -14,6 +14,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.sitimappcolombia.clases.Mensajes;
 import com.example.sitimappcolombia.dao.LugaresDAO;
 import com.example.sitimappcolombia.modelos.Lugares;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.UUID;
 
 public class misLugares extends AppCompatActivity {
 
@@ -72,7 +75,15 @@ public class misLugares extends AppCompatActivity {
         LugaresDAO lugdao = new LugaresDAO(this);
         id_lug = lugdao.insertar(lug);
 
+        lug.setId_lug((int) id_lug);
+
         //ArrayList<Lugares> mislugares = lugdao.listar();
+
+        //Insertar en Firebase Real-Time
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        database.setPersistenceEnabled(true);
+        database.getReference().child("Lugar").child(UUID.randomUUID().toString()).setValue(lug);
+
 
 
         return id_lug;
